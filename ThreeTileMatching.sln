@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeTileMatching", "ThreeTileMatching.csproj", "{1F80BF7D-BFBF-C629-9A7A-6B4D52E35654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeTileMatching.Editor", "ThreeTileMatching.Editor.csproj", "{755AC3D2-FAFD-0CB3-4A5B-4D94A0F2AAFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F80BF7D-BFBF-C629-9A7A-6B4D52E35654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F80BF7D-BFBF-C629-9A7A-6B4D52E35654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F80BF7D-BFBF-C629-9A7A-6B4D52E35654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F80BF7D-BFBF-C629-9A7A-6B4D52E35654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{755AC3D2-FAFD-0CB3-4A5B-4D94A0F2AAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755AC3D2-FAFD-0CB3-4A5B-4D94A0F2AAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755AC3D2-FAFD-0CB3-4A5B-4D94A0F2AAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755AC3D2-FAFD-0CB3-4A5B-4D94A0F2AAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
