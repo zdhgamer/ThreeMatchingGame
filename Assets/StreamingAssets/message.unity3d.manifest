@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 369051660
+CRC: 352996065
 Hashes:
   AssetFileHash:
     serializedVersion: 2
     Hash: 90b4e5e2798c3afbd5d0abc2a8f8ccee
   TypeTreeHash:
     serializedVersion: 2
-    Hash: a0a864ca3cfd14f3c215947e82b7f266
+    Hash: 4d5b2bfbfa707b651f79e420f5b835a4
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,6 +38,6 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
-- Assets/TileMatching/Examples/Builds/Message/MessagePanel.prefab
+- Assets/Resources/Builds/Panels/Message/MessagePanel.prefab
 Dependencies:
 - D:/Program/UnityWorkSpace/ThreeTileMatching/Assets/StreamingAssets/shared_asset.unity3d

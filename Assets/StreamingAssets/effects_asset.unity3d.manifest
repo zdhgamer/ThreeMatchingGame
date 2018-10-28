@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 477036175
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5468d85dde4fd97895214c10f77fd0fe
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Builds/UITextures/Effects/RingSmall.png
+- Assets/Resources/Builds/UITextures/Effects/BiscuitShadow.png
+- Assets/Resources/Builds/UITextures/Effects/EclipseShine.png
+- Assets/Resources/Builds/UITextures/Effects/RingBig.png
+- Assets/Resources/Builds/UITextures/Effects/RadialShine.png
+- Assets/Resources/Builds/UITextures/Effects/Star2.png
+- Assets/Resources/Builds/UITextures/Effects/Stripes.png
+- Assets/Resources/Builds/UITextures/Effects/Star1.png
+Dependencies: []

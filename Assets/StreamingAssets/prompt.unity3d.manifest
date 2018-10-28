@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 799066676
+CRC: 2803065475
 Hashes:
   AssetFileHash:
     serializedVersion: 2
     Hash: ccd9ab1a4d0183b4d87dce3f4fcfb503
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 89c5245576c375e241abc79985d18f49
+    Hash: d1a738dc2979bb0f77ec25c5bef8ca28
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -20,6 +20,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
+  Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+- Class: 114
+  Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+- Class: 114
   Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
   Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -27,10 +31,6 @@ ClassTypes:
   Script: {fileID: 1367256648, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
   Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-- Class: 114
-  Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-- Class: 114
-  Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -42,8 +42,8 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
-- Assets/TileMatching/Examples/Builds/Prompt/PromptItem.prefab
-- Assets/TileMatching/Examples/Builds/Prompt/PromptPanel.prefab
+- Assets/Resources/Builds/Panels/Prompt/PromptItem.prefab
+- Assets/Resources/Builds/Panels/Prompt/PromptPanel.prefab
 Dependencies:
 - D:/Program/UnityWorkSpace/ThreeTileMatching/Assets/StreamingAssets/prompt_asset.unity3d
 - D:/Program/UnityWorkSpace/ThreeTileMatching/Assets/StreamingAssets/shared_asset.unity3d

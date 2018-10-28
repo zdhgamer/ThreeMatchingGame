@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 4290025032
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3887a28857dcd4730968585d864719fb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Builds/UITextures/Bubbles/BlueBubble.png
+- Assets/Resources/Builds/UITextures/Bubbles/GreenBubble.png
+- Assets/Resources/Builds/UITextures/Bubbles/GrassGreenBubble.png
+- Assets/Resources/Builds/UITextures/Bubbles/PinkBubble.png
+- Assets/Resources/Builds/UITextures/Bubbles/PurpleBubble.png
+- Assets/Resources/Builds/UITextures/Bubbles/OrangeBubble.png
+- Assets/Resources/Builds/UITextures/Bubbles/YellowBubble.png
+Dependencies: []

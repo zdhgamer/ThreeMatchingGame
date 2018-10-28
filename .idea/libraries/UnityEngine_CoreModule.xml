@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="UnityEngine.CoreModule" type="Lua">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LuaLib/UnityEngine.CoreModule.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

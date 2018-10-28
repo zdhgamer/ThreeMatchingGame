@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TileMatching/Scenes/main.unity
+- path: Assets/ThreeMatch/Scenes/main.unity
   isLoaded: 1
   isActive: 1

@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 2131672715
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6debd5d033e54055085c2651bfc7327d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Builds/UITextures/GameOver/ChocoSticks.png
+- Assets/Resources/Builds/UITextures/GameOver/Close.png
+- Assets/Resources/Builds/UITextures/GameOver/PlayGamePopupCream.png
+- Assets/Resources/Builds/UITextures/GameOver/PinkBasic.png
+Dependencies: []

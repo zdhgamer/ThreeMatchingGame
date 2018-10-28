@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mscorlib" type="Lua">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LuaLib/mscorlib.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

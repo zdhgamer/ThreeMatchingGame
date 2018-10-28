@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 918855110
+CRC: 2343402416
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ddfee65898175705e8dd7f33918ef19f
+    Hash: 4ec428d303d5f630da25c0550867b27b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 460b4f5d62b6facbccf7c01637df8f00
+    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -14,5 +14,5 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 Assets:
-- Assets/TileMatching/Examples/Textures/Prompt/1.png
+- Assets/Resources/Builds/UITextures/Prompt/1.png
 Dependencies: []

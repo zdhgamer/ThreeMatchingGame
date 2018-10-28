@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 2631690908
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f85453dd754805d836e84d3e540e465a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Builds/UITextures/GameStart/SweetHome.png
+- Assets/Resources/Builds/UITextures/GameStart/WhiteBlackCream.png
+- Assets/Resources/Builds/UITextures/GameStart/HeartButton.png
+- Assets/Resources/Builds/UITextures/GameStart/BreadBody.png
+- Assets/Resources/Builds/UITextures/GameStart/String.png
+- Assets/Resources/Builds/UITextures/GameStart/BreadEyes.png
+- Assets/Resources/Builds/UITextures/GameStart/GreyBasic.png
+- Assets/Resources/Builds/UITextures/GameStart/PlayButton.png
+- Assets/Resources/Builds/UITextures/GameStart/SweetCream.png
+- Assets/Resources/Builds/UITextures/GameStart/PinkBasic.png
+Dependencies: []

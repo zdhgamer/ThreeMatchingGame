@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Assembly-CSharp" type="Lua">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LuaLib/Assembly-CSharp.zip!/" />
+      <root url="jar://$PROJECT_DIR$/LuaLib/mscorlib.zip!/" />
+      <root url="jar://$PROJECT_DIR$/LuaLib/UnityEngine.CoreModule.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
