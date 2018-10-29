@@ -27,6 +27,7 @@ end
 
 ---@param go UnityEngine.GameObject
 function PromptPanel.OnBtnOpenClick(go,eventData)
+	log('zzzzzz')
 	log(go.name);
 	log(eventData:ToString())
 end

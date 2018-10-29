@@ -242,6 +242,7 @@ namespace LuaFramework {
         /// 资源初始化结束
         /// </summary>
         public void OnResourceInited() {
+            facade.SendMessageCommand(NotiConst.UPDATE_DOWNLOAD_FINISH, 1);
 #if ASYNC_MODE
             ResManager.Initialize(AppConst.AssetDir, delegate() {
                 Debug.Log("Initialize OK!!!");

@@ -95,6 +95,8 @@ public class AppView : View {
                 updatePanel.UpdateDownloadProgress((float)body);
                 break;
             case NotiConst.UPDATE_DOWNLOAD_FINISH://更新完成
+                updatePanel.UpdateDownloadFinish();
+                DestroyUpdatePanel();
                 break;
         }
     }
@@ -154,6 +156,10 @@ public class AppView : View {
         {
             PanelManager panelManager = facade.GetManager<PanelManager>(ManagerName.Panel);
             panelManager.CreatePanel("Update");
+            if (Parent.Find("UpdatePanel") != null)
+            {
+                updatePanelGo = Parent.Find("UpdatePanel").gameObject;
+            };
         }
         else {
             if (Parent.Find("UpdatePanel") != null) {
@@ -178,16 +184,8 @@ public class AppView : View {
     private void DestroyUpdatePanel() {
         if (updatePanel!=null) {
             Destroy(updatePanel.gameObject);
+            updatePanel = null;
         }
     }
 
-    void OnGUI() {
-        GUI.Label(new Rect(10, 120, 960, 50), message);
-
-        GUI.Label(new Rect(10, 0, 500, 50), "(1) 单击 \"Lua/Gen Lua Wrap Files\"。");
-        GUI.Label(new Rect(10, 20, 500, 50), "(2) 运行Unity游戏");
-        GUI.Label(new Rect(10, 40, 500, 50), "PS: 清除缓存，单击\"Lua/Clear LuaBinder File + Wrap Files\"。");
-        GUI.Label(new Rect(10, 60, 900, 50), "PS: 若运行到真机，请设置Const.DebugMode=false，本地调试请设置Const.DebugMode=true");
-        GUI.Label(new Rect(10, 80, 500, 50), "PS: 加Unity+ulua技术讨论群：>>341746602");
-    }
 }

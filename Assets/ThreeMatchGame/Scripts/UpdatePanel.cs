@@ -28,10 +28,10 @@ public class UpdatePanel : MonoBehaviour {
         if (progressSlider!=null) {
             progressText = progressSlider.transform.Find("Progress_Text").GetComponent<Text>();
             downloadKbs = progressSlider.transform.Find("Kbs_Text").GetComponent<Text>();
+            progressText.text = preText + "0" + "%";
+            downloadKbs.text = "0 kb/s";
+            downloadKbs.gameObject.SetActive(false);
         }
-        progressText.text = preText+"0"+"%";
-        downloadKbs.text = "0 kb/s";
-        downloadKbs.gameObject.SetActive(false);
     }
 
     // Use this for initialization
@@ -90,4 +90,14 @@ public class UpdatePanel : MonoBehaviour {
         downloadKbs.gameObject.SetActive(true);
         downloadKbs.text = value;
     }
+
+    /// <summary>
+    /// 更新完成
+    /// </summary>
+    public void UpdateDownloadFinish() {
+        preText = "已是最新版本";
+        progressText.text = preText;
+        downloadKbs.gameObject.SetActive(false);
+    }
+
 }

@@ -48,7 +48,7 @@ function Game.OnInitOK()
     --coroutine.start(this.test_coroutine);
 
     CtrlManager.Init();
-    local ctrl = CtrlManager.GetCtrl(CtrlNames.Prompt);
+    local ctrl = CtrlManager.GetCtrl(CtrlNames.Start);
     if ctrl ~= nil then
         ctrl:Awake();
     end

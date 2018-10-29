@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using LuaInterface;
+using System;
 
 namespace LuaFramework {
     public class PanelManager : Manager {
