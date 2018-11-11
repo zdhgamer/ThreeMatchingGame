@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace LuaFramework {
     public class AppConst {
-        public const bool DebugMode = false;                       //调试模式-用于内部测试
+        public const bool DebugMode = true;                       //调试模式-用于内部测试
 
         /// <summary>
         /// 如果开启更新模式，前提必须启动框架自带服务器端。

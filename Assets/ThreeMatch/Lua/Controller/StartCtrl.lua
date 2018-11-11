@@ -4,6 +4,8 @@
 --- DateTime: 2018/10/29 23:30
 ---
 
+require("Logic/GameLogic")
+
 StartCtrl = {};
 local this = StartCtrl;
 
@@ -40,15 +42,22 @@ end
 
 --关闭事件--
 function StartCtrl.Close()
-    panelMgr:ClosePanel(CtrlNames.Message);
+    log('开始关闭Start界面')
+    panelMgr:ClosePanel('Start');
 end
 
 --开始游戏点击--
 ---@param go UnityEngine.GameObject
 function StartCtrl.OnStartGameBtnClick(go,eventData)
-    log('OnStartGameBtnClick')
-    log(go.name);
-    log(eventData:ToString())
+    log('开始游戏点击')
+    resMgr:LoadPrefab('gameprefabs',{'GameScene'},function (objs)
+        log(objs[0].name)
+        this.gameScene = newObject(objs[0])
+        this.gameSceneTable = GameLogic:New('GameLogic',this.gameScene);
+        log(this.gameSceneTable.componentName)
+        this.gameScneneComponent = LuaComponent.AddLuaComponent(this.gameScene,this.gameSceneTable)
+    end)
+    this.Close()
 end
 
 --退出游戏点击--

@@ -70,6 +70,7 @@ namespace LuaFramework {
         /// <param name="name"></param>
         public void ClosePanel(string name) {
             var panelName = name + "Panel";
+            Debug.Log(panelName);
             var panelObj = Parent.Find(panelName);
             if (panelObj == null) return;
             Destroy(panelObj.gameObject);

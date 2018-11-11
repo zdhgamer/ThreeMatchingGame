@@ -379,6 +379,7 @@ namespace LuaFramework {
 
         void Awake()
         {
+           
         }
 
         /// <summary>

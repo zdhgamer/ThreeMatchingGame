@@ -12,6 +12,8 @@ public static class LuaBinder
 		LuaInterface_DebuggerWrap.Register(L);
 		LuaProfilerWrap.Register(L);
 		EventTriggerListenerWrap.Register(L);
+		LuaComponentWrap.Register(L);
+		ComponentUtilWrap.Register(L);
 		ViewWrap.Register(L);
 		BaseWrap.Register(L);
 		ManagerWrap.Register(L);

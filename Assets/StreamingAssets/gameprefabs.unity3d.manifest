@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 3753265359
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7a9f99fe998304142fe8bf9d7ddcad88
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8f8fc190c48071767ff7914bde8310df
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: ce766995c76d1544782fe07c32f34079, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Builds/GamePrefabs/BgItem.prefab
+- Assets/Resources/Builds/GamePrefabs/GameScene.prefab
+Dependencies:
+- D:/Program/UnityWorkSpace/ThreeTileMatching/Assets/StreamingAssets/common_asset.unity3d

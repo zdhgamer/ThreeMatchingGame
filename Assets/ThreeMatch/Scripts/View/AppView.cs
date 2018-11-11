@@ -152,30 +152,19 @@ public class AppView : View {
     /// </summary>
     /// <returns></returns>
     private void LoadUpdatePanel() {
-        if (LoadAssetBundleManifest())
+        if (Parent.Find("UpdatePanel") != null)
         {
-            PanelManager panelManager = facade.GetManager<PanelManager>(ManagerName.Panel);
-            panelManager.CreatePanel("Update");
-            if (Parent.Find("UpdatePanel") != null)
-            {
-                updatePanelGo = Parent.Find("UpdatePanel").gameObject;
-            };
-        }
-        else {
-            if (Parent.Find("UpdatePanel") != null) {
-                return;
-            };
-            GameObject go = Resources.Load<GameObject>("Builds/Panels/Update/UpdatePanel");
-            updatePanelGo = Instantiate(go,parent);
-            // updatePanel.transform.SetParent(Parent);
-            updatePanelGo.name = "UpdatePanel";
-            updatePanelGo.transform.localPosition = Vector3.zero;
-            updatePanelGo.transform.localScale = Vector3.one;
-            (updatePanelGo.transform as RectTransform).offsetMax = new Vector2(0, 0);
-            (updatePanelGo.transform as RectTransform).offsetMin = new Vector2(0, 0);
-            updatePanelGo.layer = LayerMask.NameToLayer("Default");
-
-        }
+            return;
+        };
+        GameObject go = Resources.Load<GameObject>("Builds/Panels/Update/UpdatePanel");
+        updatePanelGo = Instantiate(go, parent);
+        // updatePanel.transform.SetParent(Parent);
+        updatePanelGo.name = "UpdatePanel";
+        updatePanelGo.transform.localPosition = Vector3.zero;
+        updatePanelGo.transform.localScale = Vector3.one;
+        (updatePanelGo.transform as RectTransform).offsetMax = new Vector2(0, 0);
+        (updatePanelGo.transform as RectTransform).offsetMin = new Vector2(0, 0);
+        updatePanelGo.layer = LayerMask.NameToLayer("Default");
     }
 
     /// <summary>

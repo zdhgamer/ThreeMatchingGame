@@ -182,6 +182,8 @@ public static class CustomSettings
 
         _GT(typeof(EventTriggerListener)),
         _GT(typeof(EventTrigger)),
+        _GT(typeof(LuaComponent)),
+        _GT(typeof(ComponentUtil)),
     };
 
     public static List<Type> dynamicList = new List<Type>()
@@ -206,6 +208,7 @@ public static class CustomSettings
         typeof(BlendWeights),
         typeof(RenderTexture),
         typeof(Rigidbody),
+
     };
 
     //重载函数，相同参数个数，相同位置out参数匹配出问题时, 需要强制匹配解决

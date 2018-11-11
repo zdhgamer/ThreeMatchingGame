@@ -8,6 +8,11 @@ public class StartUpCommand : ControllerCommand {
         if (!Util.CheckEnvironment()) return;
         //-----------------关联命令-----------------------
         AppFacade.Instance.RegisterCommand(NotiConst.DISPATCH_MESSAGE, typeof(SocketCommand));
+        GameObject gameMgr = GameObject.Find("GlobalGenerator");
+        if (gameMgr != null)
+        {
+            AppView appView = gameMgr.AddComponent<AppView>();
+        }
 
         //-----------------初始化管理器-----------------------
         AppFacade.Instance.AddManager<LuaManager>(ManagerName.Lua);
@@ -20,10 +25,6 @@ public class StartUpCommand : ControllerCommand {
         AppFacade.Instance.AddManager<ObjectPoolManager>(ManagerName.ObjectPool);
         AppFacade.Instance.AddManager<GameManager>(ManagerName.Game);
 
-        GameObject gameMgr = GameObject.Find("GlobalGenerator");
-        if (gameMgr != null)
-        {
-            AppView appView = gameMgr.AddComponent<AppView>();
-        }
+
     }
 }
