@@ -56,6 +56,7 @@ function StartCtrl.OnStartGameBtnClick(go,eventData)
         this.gameSceneTable = GameLogic:New('GameLogic',this.gameScene);
         log(this.gameSceneTable.componentName)
         this.gameScneneComponent = LuaComponent.AddLuaComponent(this.gameScene,this.gameSceneTable)
+        this:LoadGamePanel()
     end)
     this.Close()
 end
@@ -66,4 +67,12 @@ function StartCtrl.OnExitGameBtnClick(go,eventData)
     log('OnExitGameBtnClick')
     log(go.name);
     log(eventData:ToString())
+end
+
+function StartCtrl:LoadGamePanel()
+    log('加载游戏界面UI')
+    local ctrl = CtrlManager.GetCtrl(CtrlNames.Game);
+    if ctrl ~= nil then
+        ctrl:Awake();
+    end
 end

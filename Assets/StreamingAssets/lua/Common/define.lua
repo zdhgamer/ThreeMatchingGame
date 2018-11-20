@@ -2,13 +2,15 @@
 CtrlNames = {
 	Prompt = "PromptCtrl",
 	Message = "MessageCtrl",
-	Start = "StartCtrl"
+	Start = "StartCtrl",
+	Game = "GameCtrl"
 }
 
 PanelNames = {
 	"PromptPanel",	
 	"MessagePanel",
 	"StartPanel",
+	"GamePanel",
 }
 
 --协议类型--

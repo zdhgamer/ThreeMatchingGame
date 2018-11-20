@@ -9,7 +9,6 @@ using UnityEngine;
 using ICSharpCode.SharpZipLib.Zip;
 
 public class DllToLuaLib : Editor {
-
 	private static string[] LUA_KEYWORDS = { "local", "function", "end", "then" };
 	private static string[] DLL_NAMES = {
 		"mscorlib",

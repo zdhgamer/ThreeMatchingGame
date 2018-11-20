@@ -2,6 +2,7 @@ require "Common/define"
 require "Controller/PromptCtrl"
 require "Controller/MessageCtrl"
 require "Controller/StartCtrl"
+require "Controller/GameCtrl"
 
 CtrlManager = {};
 local this = CtrlManager;
@@ -12,7 +13,7 @@ function CtrlManager.Init()
 	ctrlList[CtrlNames.Prompt] = PromptCtrl.New();
 	ctrlList[CtrlNames.Message] = MessageCtrl.New();
 	ctrlList[CtrlNames.Start] = StartCtrl.New();
-
+	ctrlList[CtrlNames.Game] = GameCtrl.New();
 	return this;
 end
 

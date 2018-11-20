@@ -4,14 +4,23 @@
 --- DateTime: 2018/11/8 22:39
 ---
 
-LLuaComponent={componentName=""}
+
+
+---@class LLuaComponent lua脚本的基类
+LLuaComponent={
+    componentName="",
+    ---@type UnityEngine.GameObject
+    gameObject=nil
+}
 
 LLuaComponent.__index = LLuaComponent
 
-function LLuaComponent:New()
+---@param gameObject UnityEngine.GameObject
+function LLuaComponent:New(componentName,gameObject)
     local result = {}
     setmetatable(result,LLuaComponent)
-    result.componentName = ""
+    result.componentName = componentName
+    result.gameObject = gameObject;
     return result
 end
 
@@ -88,7 +97,7 @@ function LLuaComponent:OnLevelWasLoaded(level)
 end
 
 function LLuaComponent:OnApplicationFocus(focus)
-    log('执行lua端的OnApplicationFocus')
+    log('执行lua端的OnApplicationFocus'.. tostring(focus))
 end
 
 function LLuaComponent:OnApplicationQuit()

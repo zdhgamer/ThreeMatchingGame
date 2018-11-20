@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua" line="15" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f728dbde-aa31-42ff-9d3b-eb14cfd41be4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameLogic.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/GameCtrl.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/GamePanel.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ThreeTileMatching/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/StreamingAssets" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/StreamingAssets" afterDir="false" />
@@ -15,174 +17,151 @@
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/common_asset.unity3d" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/common_asset.unity3d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/common_asset.unity3d.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/common_asset.unity3d.manifest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/files.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_cjson.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_cjson.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_luabitop.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_luabitop.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_pbc.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_pbc.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_pblua.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_pblua.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_sproto.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_3rd_sproto.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_cjson.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_cjson.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_common.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_common.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_controller.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_controller.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_jit.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_jit.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_logic.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_logic.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_lpeg.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_lpeg.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_misc.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_misc.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_protobuf.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_protobuf.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_socket.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_socket.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_system.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_system.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_system_injection.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_system_injection.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_system_reflection.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_system_reflection.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_unityengine.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_unityengine.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_view.unity3d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/lua_view.unity3d.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Editor/CustomSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Editor/CustomSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Common/define.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Common/define.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Controller/StartCtrl.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Controller/StartCtrl.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Logic/CtrlManager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Logic/CtrlManager.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Logic/LLuaComponent.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/lua/Logic/LLuaComponent.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Editor/DllToLuaLib.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Editor/DllToLuaLib.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Editor/Packager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Editor/Packager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/define.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/define.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/StartCtrl.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/StartCtrl.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/ConstDefine/AppConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/ConstDefine/AppConst.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Controller/Command/StartUpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Controller/Command/StartUpCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Manager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Manager/PanelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Manager/PanelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Manager/ResourceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/Manager/ResourceManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/View/AppView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Scripts/View/AppView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/ToLua/Source/Generate/LuaBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/ToLua/Source/Generate/LuaBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatchGame/Scenes/game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatchGame/Scenes/game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameLogic.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameLogic.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThreeMatch/ToLua/Source/Generate/UnityEngine_QualitySettingsWrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThreeMatch/ToLua/Source/Generate/UnityEngine_QualitySettingsWrap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/LastBuild.buildreport" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastBuild.buildreport" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/03/032ff8fe64628144e845e86f66d61e82" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/03/032ff8fe64628144e845e86f66d61e82.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/07/0740d268acf708141827ce3291392e26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/07/0740d268acf708141827ce3291392e26.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/07/074ee76e681be364e93dbe8ad8c63f1d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/07/074ee76e681be364e93dbe8ad8c63f1d.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/0b/0b9da3ed050bc394d980853f3776d826" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/0b/0b9da3ed050bc394d980853f3776d826.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/01/0169fcd97889a8f41a0496ceb2dcce69.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/01/0169fcd97889a8f41a0496ceb2dcce69.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/03/039808725690ace4d90d2714206ca0ba.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/03/039808725690ace4d90d2714206ca0ba.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/05/059d1d64848eca440aa6694e0c7e5d55.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/05/059d1d64848eca440aa6694e0c7e5d55.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/06/061f7bd799f991b41b5ac6d7f6cd44a3.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/06/061f7bd799f991b41b5ac6d7f6cd44a3.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/08/0844a2bd2ed28f34595d2bc1fbfd7e7c.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/08/0844a2bd2ed28f34595d2bc1fbfd7e7c.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/0d/0d10d9b76351f1f42be8c39dbbeb61dd.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0d/0d10d9b76351f1f42be8c39dbbeb61dd.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/0d/0d5506d719a18b847a9e56882de1285b.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/0d/0d5506d719a18b847a9e56882de1285b.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/14/14bcfe1727fc1e545bd432e4fe5aa733" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/14/14bcfe1727fc1e545bd432e4fe5aa733.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/18/185a0e2ca71e7154099945f689378737" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/18/185a0e2ca71e7154099945f689378737.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/1f/1f38ff056ec61eb45b45be6237f94dfc" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1f/1f38ff056ec61eb45b45be6237f94dfc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/20/2051dd7d3b4eb7d469f1622b18e7148b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/20/2051dd7d3b4eb7d469f1622b18e7148b.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/23/23bbac807d4b37b47a3296372ee243e9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/23/23bbac807d4b37b47a3296372ee243e9.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/24/246931f2ae1160745bbdd742272468c5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/24/246931f2ae1160745bbdd742272468c5.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c0d39399fbe05e4b90b94523443d6e1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c0d39399fbe05e4b90b94523443d6e1.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/10/105072a955763134d8fe07ccaca1dede.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/10/105072a955763134d8fe07ccaca1dede.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/10/10f5d4643566daf46b981ff82bea497a.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/10/10f5d4643566daf46b981ff82bea497a.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/11/113d8a6000cb3bf4d85c2a7e2cb77d9b.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/11/113d8a6000cb3bf4d85c2a7e2cb77d9b.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/15/154ba00ff4efef84589f2b16083f440d.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/15/154ba00ff4efef84589f2b16083f440d.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/16/166dde673d7e2814fa56aade98505b19.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/16/166dde673d7e2814fa56aade98505b19.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/17/179aa983a2f425d40ab512e8be1bd78f.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/17/179aa983a2f425d40ab512e8be1bd78f.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/17/17a60dde54d29d74f969e0821bddb2cd.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/17/17a60dde54d29d74f969e0821bddb2cd.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1b/1b5dd88a062f3e74aa2563401185ca86.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1b/1b5dd88a062f3e74aa2563401185ca86.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/1d/1d02929728763cc4f8cd61b816f6b8e9.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1d/1d02929728763cc4f8cd61b816f6b8e9.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/20/20c24b1e6bf7e6244bd0eb07c85578b8.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/20/20c24b1e6bf7e6244bd0eb07c85578b8.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/22/22065c7f051d0f548ad12fb649df3e53.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/22/22065c7f051d0f548ad12fb649df3e53.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/22/22a8f5770b7ed6349ae55ba86c6c75bc.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/22/22a8f5770b7ed6349ae55ba86c6c75bc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/26/26b2c332bf67b6e43bcc1676fac7f5b6.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/26/26b2c332bf67b6e43bcc1676fac7f5b6.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c3dbbb718b713b4e97b1db6e31346d7" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/2c/2c3dbbb718b713b4e97b1db6e31346d7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/2d/2d28324217127cf4899db596ecb3dda5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/2d/2d28324217127cf4899db596ecb3dda5.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/32/32b5a440629cb914a83c2db9c1e3b126" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/32/32b5a440629cb914a83c2db9c1e3b126.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/35/354aa74efb1b7424f9b142bc0073df53" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/35/354aa74efb1b7424f9b142bc0073df53" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/36/36c37a230df84d845b64d4d122782669" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/36/36c37a230df84d845b64d4d122782669" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2d/2d67e695667f6804bbd41700ebf33dd0.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/2d/2d67e695667f6804bbd41700ebf33dd0.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2e/2edb6975f4c0d2142a6747c9d9bb8fcc.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/2e/2edb6975f4c0d2142a6747c9d9bb8fcc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/31/31a39a8b55cd67f41ae292727e19ddef.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/31/31a39a8b55cd67f41ae292727e19ddef.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/35/35aa8347486c5394d8546eb36552eff9.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/35/35aa8347486c5394d8546eb36552eff9.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/37/3742a09f416d25b438f2ff6f8b85bd51.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/37/3742a09f416d25b438f2ff6f8b85bd51.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/37/37cc1b60d84749d40ac9e3ad97c75e92.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/37/37cc1b60d84749d40ac9e3ad97c75e92.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/38/3889f0e307683ed42ab7262fef66158d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/38/3889f0e307683ed42ab7262fef66158d.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/38/38eead90304f29a46aa58db16836d3db" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/38/38eead90304f29a46aa58db16836d3db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3b/3beb970a8c58cca499ba7ebf2acd139c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3b/3beb970a8c58cca499ba7ebf2acd139c.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3f/3f838e7e0b82eab44b75de4237e17c4d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3f/3f838e7e0b82eab44b75de4237e17c4d.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/40/407dc81fcdb30344a8530f713794ae43" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/40/407dc81fcdb30344a8530f713794ae43.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/42/42881659146c9474ca306daa925df6b1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/42/42881659146c9474ca306daa925df6b1.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3b/3b77c5bd4bb75e944952fb824ab33b24.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3b/3b77c5bd4bb75e944952fb824ab33b24.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/40/40e6eadda8fb62343abea1e745b68d5d.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/40/40e6eadda8fb62343abea1e745b68d5d.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/41/41aaf12b9d6868f4a900cbe4bd48fe5b.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/41/41aaf12b9d6868f4a900cbe4bd48fe5b.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/45/453aacf6267e73748b38e2d4d5df2e75.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/45/453aacf6267e73748b38e2d4d5df2e75.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/47/47732fa5ecd1ba141875a7a2ce3d228a.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/47/47732fa5ecd1ba141875a7a2ce3d228a.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/48/48ecd5d9774cf2344bbda1648a6a698b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/48/48ecd5d9774cf2344bbda1648a6a698b.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/49/494e83a227aedc9408247d034c539a56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/49/494e83a227aedc9408247d034c539a56.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/4f/4f199c2ab018b5b41a123b1d79dbc0fc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/4f/4f199c2ab018b5b41a123b1d79dbc0fc.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/49/494a4ab2d450bd947b2a350d5bb43912.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/49/494a4ab2d450bd947b2a350d5bb43912.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/49/49c574b95ffab2740b2d555a359cccfe.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/49/49c574b95ffab2740b2d555a359cccfe.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/4e/4ea04f58a9ee8b640ac5e49ba556dafb.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4e/4ea04f58a9ee8b640ac5e49ba556dafb.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/50/503969e58aef0414b8e728396df9dcdc.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/50/503969e58aef0414b8e728396df9dcdc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/51/51528c3b2195e6a4199481a047682c0f.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/51/51528c3b2195e6a4199481a047682c0f.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/52/52234f2261335e54db2f539401a335df.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/52/52234f2261335e54db2f539401a335df.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/54/540d8289271c4d94593bee16be0e30ed.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/54/540d8289271c4d94593bee16be0e30ed.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/54/547ea20f029229247a6d9196d14e3ce3.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/54/547ea20f029229247a6d9196d14e3ce3.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/5a/5a13781e2c0408040a15cc94848fb9f2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/5a/5a13781e2c0408040a15cc94848fb9f2.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/60/60d37b9d41897284b91053a42333ca1e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/60/60d37b9d41897284b91053a42333ca1e.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6a46a10ea15137e4f913ce5d441a9064" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6a/6a46a10ea15137e4f913ce5d441a9064" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/73/73612126bf3c24041afe8192922bc00d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/73/73612126bf3c24041afe8192922bc00d.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/75/7539223d5b1f62d49a0edf63b2d595ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/75/7539223d5b1f62d49a0edf63b2d595ec.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/79/796c37014aaee0d43b3c4fcb327389d5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/79/796c37014aaee0d43b3c4fcb327389d5.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/82/826d69f6d18d7dd4487ec7f54a119b47" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/82/826d69f6d18d7dd4487ec7f54a119b47.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/86/86bf33513bdd8324985f8712180692d9" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/86/86bf33513bdd8324985f8712180692d9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/89/89cc569f89ef7f04e8146137744fd550" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/89/89cc569f89ef7f04e8146137744fd550.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/8c/8c2f57ad48854884294ce4675df957c8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/8c/8c2f57ad48854884294ce4675df957c8.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/96/9621a0179b692cd46b020b1de545ebed" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/96/9621a0179b692cd46b020b1de545ebed" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ac/ac56f608c75fa2644a03fdbbb4e94469" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ac/ac56f608c75fa2644a03fdbbb4e94469.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/55/556bff2b28c192e468413c97c76685c9.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/55/556bff2b28c192e468413c97c76685c9.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/58/58d3e78aa7d46494b82bb9935a1178fc.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/58/58d3e78aa7d46494b82bb9935a1178fc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/5e/5e93d0848e06efd4589d782d195e0298.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/5e/5e93d0848e06efd4589d782d195e0298.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/65/65d4222b66784494393e23a1a4e25b8b.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/65/65d4222b66784494393e23a1a4e25b8b.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/66/66b0a39b942f25147ab77a1c2ad2c426.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/66/66b0a39b942f25147ab77a1c2ad2c426.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/66/66b5f48adc4818641979faac24038bae.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/66/66b5f48adc4818641979faac24038bae.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6ad7857ce7c7d2249b5b272a4899ce64.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6a/6ad7857ce7c7d2249b5b272a4899ce64.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/6d/6d1b634070dd20c4eb263f482a99433f.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6d/6d1b634070dd20c4eb263f482a99433f.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/70/70e7b51d59e50e24faffb6513bafdbef.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/70/70e7b51d59e50e24faffb6513bafdbef.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/75/75c2386ecc8733748a5d9b1f349939ee.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/75/75c2386ecc8733748a5d9b1f349939ee.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7a/7a11b48558ca2dd43b5351515beb96bc.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/7a/7a11b48558ca2dd43b5351515beb96bc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7a/7a75f7b1968f6fc43aa191d8fd3d4f64.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/7a/7a75f7b1968f6fc43aa191d8fd3d4f64.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7a/7ae22a4a5d2ec6243a59230c34b5d546.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/7a/7ae22a4a5d2ec6243a59230c34b5d546.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7c/7c85612ca80f94a42b10649b606f1c84.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/7c/7c85612ca80f94a42b10649b606f1c84.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/7f/7fd9af92ecf985349ab49b076572ad06.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/7f/7fd9af92ecf985349ab49b076572ad06.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/81/81262e823da18a746b60248e5a586477.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/81/81262e823da18a746b60248e5a586477.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/81/815eaaa7a7517a84da5228090bbb5d1d.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/81/815eaaa7a7517a84da5228090bbb5d1d.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/82/8247fe2e95b85ec44a5970e2f218a638.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/82/8247fe2e95b85ec44a5970e2f218a638.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/83/83bf74a721497204cab850459714819f.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/83/83bf74a721497204cab850459714819f.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/85/853c85cbf506a3d4f95188bf1619f5d3.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/85/853c85cbf506a3d4f95188bf1619f5d3.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/86/8653849af69af9a4c8c89664ba903316.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/86/8653849af69af9a4c8c89664ba903316.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/90/90159e8a00ddc39439745d0369621ee9.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/90/90159e8a00ddc39439745d0369621ee9.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/91/91a7cf855ad969c4e8dcbdccc7b77e59.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/91/91a7cf855ad969c4e8dcbdccc7b77e59.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/92/9237a143ba6c8474cb0840802b54ceda.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/92/9237a143ba6c8474cb0840802b54ceda.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/94/94fa23b9d0aa8c54cbd405c4d7c1ceef.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/94/94fa23b9d0aa8c54cbd405c4d7c1ceef.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/97/97feec7dd396ee24c814dd38b9ce2b66.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/97/97feec7dd396ee24c814dd38b9ce2b66.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9b/9b9734f44ef5740429a2c57c420315e8.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9b/9b9734f44ef5740429a2c57c420315e8.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9e/9e0889841768048479f488a2fcff1b43.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9e/9e0889841768048479f488a2fcff1b43.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9e/9e7f6fcce6117e84383f36eab237ccf4.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9e/9e7f6fcce6117e84383f36eab237ccf4.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/9e/9e872802c2e810c499eeaa995562ca3a.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9e/9e872802c2e810c499eeaa995562ca3a.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a6/a63cc631b86a1b9499943e6200dba8dd.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/a6/a63cc631b86a1b9499943e6200dba8dd.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/a8/a8c6ab1133ac946468bf8e56f2340950.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/a8/a8c6ab1133ac946468bf8e56f2340950.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ab/ab4a7269f0c118b4889597d8dbd95794.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ab/ab4a7269f0c118b4889597d8dbd95794.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ac/ac3e85bb1e0e2c9438272f81ab785e67.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ac/ac3e85bb1e0e2c9438272f81ab785e67.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ac/ac88f06d69b302d4786cf2e8b421593d.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ac/ac88f06d69b302d4786cf2e8b421593d.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ae/ae0f3f65c9df9e24db74f4ee598a95cd.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ae/ae0f3f65c9df9e24db74f4ee598a95cd.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/b1/b12e1c0f6cd2c7649a822eb8565684be.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b1/b12e1c0f6cd2c7649a822eb8565684be.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/b1/b1545d35cb5d31e469cff9e3dbc576e9" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b1/b1545d35cb5d31e469cff9e3dbc576e9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/b1/b131e2fb9d7ada24086e3d6fab1f1573.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b1/b131e2fb9d7ada24086e3d6fab1f1573.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/b5/b58ac0a3d12cc904cb4bf643c8b8368c.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b5/b58ac0a3d12cc904cb4bf643c8b8368c.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/b8/b853d40dd58589343beccf388fe8e982.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b8/b853d40dd58589343beccf388fe8e982.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ba/ba4acbb540ac5a7489e1dfb911e82c0f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ba/ba4acbb540ac5a7489e1dfb911e82c0f.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb03539edd8633b489c18a3bc1c58ed2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb03539edd8633b489c18a3bc1c58ed2.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/be/be9fc6c9cfc936f48a28d4096e90c666" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/be/be9fc6c9cfc936f48a28d4096e90c666.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ca/ca584f22830b10346862dc67a9f9b22f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ca/ca584f22830b10346862dc67a9f9b22f.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/cb/cb6e7a773c36ff642a71f066fff41b9f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/cb/cb6e7a773c36ff642a71f066fff41b9f.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/cf/cf7932ef3c39ebd479c33f16b3dff6a0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/cf/cf7932ef3c39ebd479c33f16b3dff6a0.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/d0/d03921d2988245f4eaf4e9a4e5561795" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/d0/d03921d2988245f4eaf4e9a4e5561795.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/d6/d60b415621f3cf3458f8fba059fd7736" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/d6/d60b415621f3cf3458f8fba059fd7736.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/de/de04453de50a34a4f924eb811c422a81" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/de/de04453de50a34a4f924eb811c422a81.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ed/ed181a913b43dd04499dc321e8a7642e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ed/ed181a913b43dd04499dc321e8a7642e.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ee/eef9ece3a99e3f34397c2aa3a82bb80d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ee/eef9ece3a99e3f34397c2aa3a82bb80d.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ba/ba6ebdb13cadf6640bd0dab8a5520b95.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ba/ba6ebdb13cadf6640bd0dab8a5520b95.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c0/c03b8fa61e9049e46b69650f49b9a0b6.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c0/c03b8fa61e9049e46b69650f49b9a0b6.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c0/c0688e86f534bee439b77bd4e7e4a70e.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c0/c0688e86f534bee439b77bd4e7e4a70e.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c0/c070c0fdea50c8248817447b1c84cfd7.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c0/c070c0fdea50c8248817447b1c84cfd7.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c0/c096ffec43be4ee4a82de6b0d2265490.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c0/c096ffec43be4ee4a82de6b0d2265490.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c2/c2440607f083df74d9deed71d55e9475.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c2/c2440607f083df74d9deed71d55e9475.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c2/c2bba007fe083bd45913ffaf11631342.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c2/c2bba007fe083bd45913ffaf11631342.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c3/c38d4987c93a70a47a8bdb1ef976c324.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c3/c38d4987c93a70a47a8bdb1ef976c324.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c4/c4353db1367aa9a4f807aa78059f806b.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c4/c4353db1367aa9a4f807aa78059f806b.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c7/c7d6564697eef2348aab50ec02dd7abb.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c7/c7d6564697eef2348aab50ec02dd7abb.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c7/c7da0c278ef47724abd32859aeb10f90.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c7/c7da0c278ef47724abd32859aeb10f90.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c98a57277674e8e4f87ffa4b12ea8d2b.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c9/c98a57277674e8e4f87ffa4b12ea8d2b.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c9f2da88f9aba4445b973ea58f7ac6ba" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c9/c9f2da88f9aba4445b973ea58f7ac6ba" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ca/cab769e48db8adb4b9665e37af99c996.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ca/cab769e48db8adb4b9665e37af99c996.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cb/cb5aa634b1bdc74419d132973485c509.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/cb/cb5aa634b1bdc74419d132973485c509.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cc/cc13a448a5c471a4596754742cfbc38c.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/cc/cc13a448a5c471a4596754742cfbc38c.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/cd/cdcacb2d5eae32249b4ca1b08151b065.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/cd/cdcacb2d5eae32249b4ca1b08151b065.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d2/d222f3764d9127641b84263d9421482f.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d2/d222f3764d9127641b84263d9421482f.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d5/d513c8f082da29e41af94e1bd672c53e.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d5/d513c8f082da29e41af94e1bd672c53e.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d7/d7b4b57a1d6e77349a88c69d302baefc.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d7/d7b4b57a1d6e77349a88c69d302baefc.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d7/d7f92f4600b73e340992ec974cf37bdb.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d7/d7f92f4600b73e340992ec974cf37bdb.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/d9/d916742e80f0d924a8c3f2ee74650daa.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d9/d916742e80f0d924a8c3f2ee74650daa.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dc5c6d9b0634f1d49b73f3a5eff7a9c8.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/dc/dc5c6d9b0634f1d49b73f3a5eff7a9c8.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/dd/dd1ce9094f815e4478003583bc9a4dd9.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/dd/dd1ce9094f815e4478003583bc9a4dd9.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/de/de2dd1632aef1ab46bccfb1034a2a8d7.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/de/de2dd1632aef1ab46bccfb1034a2a8d7.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/df/dfbdb1ab7d563d54eb1fbad28e623b51.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/df/dfbdb1ab7d563d54eb1fbad28e623b51.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e2/e21faeabfd9b5fa4c878887484972075" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e2/e21faeabfd9b5fa4c878887484972075" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e2/e283f434ccc00c94a9e6b5f9eec4d03a.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e2/e283f434ccc00c94a9e6b5f9eec4d03a.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e4/e46a500ab14961e4595ec896070b9998.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e4/e46a500ab14961e4595ec896070b9998.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e5/e58f694becd448143b94eba0e736d0e0.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e5/e58f694becd448143b94eba0e736d0e0.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/e6/e6bf1f85650eb984eab72435ffd4995f.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e6/e6bf1f85650eb984eab72435ffd4995f.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ea/ea5f114017b714b489a3afcbfd31d47e.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ea/ea5f114017b714b489a3afcbfd31d47e.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ec/ecd6e8b230a6c4342ab422da67b2b4e1.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ec/ecd6e8b230a6c4342ab422da67b2b4e1.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/ee/eee7592ec20abec45a52e91a3ce5ca9e.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ee/eee7592ec20abec45a52e91a3ce5ca9e.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f5/f547de081ecfc9644b6a5b41b06ae078.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f5/f547de081ecfc9644b6a5b41b06ae078.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f850cccb688f7804db494025e774e056.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f8/f850cccb688f7804db494025e774e056.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f8/f877b5b584b642b45ad240ca66b26287.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f8/f877b5b584b642b45ad240ca66b26287.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fa/fa4e81c7cca3a284b84332c1d8ee18de.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/fa/fa4e81c7cca3a284b84332c1d8ee18de.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fa/fad555623bac99e43bc5b9aa6711a743.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/fa/fad555623bac99e43bc5b9aa6711a743.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/fe/fe3fa55e4af0ca44c88ffaaed0efb2ff.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/fe/fe3fa55e4af0ca44c88ffaaed0efb2ff.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuaLib/Assembly-CSharp.zip" beforeDir="false" afterPath="$PROJECT_DIR$/LuaLib/Assembly-CSharp.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuaLib/UnityEngine.CoreModule.zip" beforeDir="false" afterPath="$PROJECT_DIR$/LuaLib/UnityEngine.CoreModule.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LuaLib/mscorlib.zip" beforeDir="false" afterPath="$PROJECT_DIR$/LuaLib/mscorlib.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -196,22 +175,44 @@
       <file leaf-file-name="Game.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/Game.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="138" column="12" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="12" />
+            <state relative-caret-position="110">
+              <caret line="47" column="43" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="43" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="protobuf.lua" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/3rd/pbc/protobuf.lua">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="StartCtrl.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/StartCtrl.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="56" column="45" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="45" />
+            <state relative-caret-position="813">
+              <caret line="60" column="14" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="define.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/StreamingAssets/lua/Common/define.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameCtrl.lua" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/GameCtrl.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="593">
+              <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePanel.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/StreamingAssets/lua/View/GamePanel.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="21" column="90" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -219,44 +220,8 @@
       <file leaf-file-name="GameLogic.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameLogic.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LuaClass.lua" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/LuaClass.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="define.lua" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/define.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PromptCtrl.lua" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/PromptCtrl.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1012">
-              <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LLuaComponent.lua" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/LLuaComponent.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="310">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -264,17 +229,35 @@
       <file leaf-file-name="StartPanel.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/StartPanel.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="220">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.lua" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/functions.lua">
+      <file leaf-file-name="PromptPanel.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/PromptPanel.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="616">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CtrlManager.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePanel.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/GamePanel.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="20" column="92" selection-start-line="20" selection-start-column="92" selection-end-line="20" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -301,21 +284,24 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/PromptCtrl.lua" />
         <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/MessagePanel.lua" />
-        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua" />
         <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/PromptPanel.lua" />
         <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/Game.lua" />
-        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/StartPanel.lua" />
         <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameSceneComponent.lua" />
+        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/LLuaComponent.lua" />
+        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameLogic.lua" />
+        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/StartPanel.lua" />
         <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/define.lua" />
         <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/StartCtrl.lua" />
-        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameLogic.lua" />
-        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/LLuaComponent.lua" />
+        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua" />
+        <option value="$PROJECT_DIR$/Assets/StreamingAssets/lua/View/GamePanel.lua" />
+        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/GamePanel.lua" />
+        <option value="$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/GameCtrl.lua" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="180" />
-    <option name="y" value="146" />
+    <option name="x" value="2065" />
+    <option name="y" value="82" />
     <option name="width" value="1400" />
     <option name="height" value="957" />
   </component>
@@ -327,7 +313,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -389,15 +374,22 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GitHubProject/LuaList" />
+    <property name="last_opened_file_path" value="E:/DownLoad/puremvc-lua-master/puremvc-lua-master" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program\UnityWorkSpace\ThreeTileMatching\Assets\ThreeMatch\Lua\View" />
+      <recent name="D:\Program\UnityWorkSpace\ThreeTileMatching\Assets\ThreeMatch\Lua\Controller" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -468,7 +460,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="180" y="146" width="1400" height="957" extended-state="0" />
+    <frame x="2065" y="82" width="1400" height="957" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -507,48 +499,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/MessagePanel.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/StartCtrl.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/ToLua/Lua/event.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4444">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/StartPanel.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/PromptCtrl.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="51" column="26" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/PromptPanel.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/protocal.lua">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -704,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/PromptPanel.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/MessagePanel.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -732,27 +675,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/Network.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1562">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameSceneComponent.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameSceneComponent.lua" />
     <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/MessageCtrl.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -773,10 +696,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/StartPanel.lua">
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/functions.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="550">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/LLuaComponent.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/PromptCtrl.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/ToLua/Lua/tolua.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/define.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -787,52 +738,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/Game.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="138" column="12" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/functions.lua">
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/Network.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Common/define.lua">
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/StartPanel.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="220">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/StartCtrl.lua">
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/PromptPanel.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="56" column="45" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="45" />
+        <state relative-caret-position="616">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/PromptCtrl.lua">
+    <entry file="jar://$APPLICATION_PLUGINS_DIR$/EmmyLua/lib/EmmyLua-1.2.4.jar!/std/coroutine.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        <state relative-caret-position="110">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/Game.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="47" column="43" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/StreamingAssets/lua/Common/define.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/StreamingAssets/lua/View/GamePanel.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="21" column="90" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/CtrlManager.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/GameLogic.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        <state relative-caret-position="310">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Logic/LLuaComponent.lua">
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/StartCtrl.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="813">
+          <caret line="60" column="14" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/View/GamePanel.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="20" column="92" selection-start-line="20" selection-start-column="92" selection-end-line="20" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ThreeMatch/Lua/Controller/GameCtrl.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
         </state>
       </provider>
     </entry>
