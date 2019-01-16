@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using LuaInterface;
 
 public class EventTriggerListener : EventTrigger {
     /// <summary>
@@ -109,6 +110,11 @@ public class EventTriggerListener : EventTrigger {
     public event AxisEventDelegate onMove;
 
     /// <summary>
+    /// 用于执行Lua的Class里面的方法
+    /// </summary>
+    private LuaTable targetTable;
+
+    /// <summary>
     /// 获取一个事件监听
     /// </summary>
     /// <param name="go"></param>
@@ -122,6 +128,14 @@ public class EventTriggerListener : EventTrigger {
     }
 
     /// <summary>
+    /// 设置回调的class
+    /// </summary>
+    /// <param name="table"></param>
+    public void SetLuaTable(LuaTable table) {
+        targetTable = table;
+    }
+
+    /// <summary>
     /// 开始拖拽
     /// </summary>
     /// <param name="eventData"></param>
@@ -129,7 +143,13 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnBeginDrag(eventData);
         if (onBeginDrag!=null) {
-            onBeginDrag(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("OnBeginDrag", targetTable, this.gameObject, eventData);
+            }
+            else {
+                onBeginDrag(gameObject, eventData);
+            }
         }
     }
     
@@ -141,7 +161,13 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnDrag(eventData);
         if (onDrag!=null) {
-            onDrag(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onDrag", targetTable, this.gameObject, eventData);
+            }
+            else {
+                onDrag(gameObject, eventData);
+            }
         }
     }
 
@@ -153,7 +179,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnDrop(eventData);
         if (onDrop!=null) {
-            onDrop(gameObject,eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onDrop", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onDrop(gameObject, eventData);
+            }
         }
     }
 
@@ -165,7 +198,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnEndDrag(eventData);
         if (onEndDrag!=null) {
-            onEndDrag(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onEndDrag", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onEndDrag(gameObject, eventData);
+            }
         }
     }
 
@@ -177,7 +217,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnInitializePotentialDrag(eventData);
         if (onInitializePotentialDrag!=null) {
-            onInitializePotentialDrag(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onInitializePotentialDrag", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onInitializePotentialDrag(gameObject, eventData);
+            }
         }
     }
 
@@ -189,7 +236,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnPointerClick(eventData);
         if (onPointerClick!=null) {
-            onPointerClick(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onPointerClick", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onPointerClick(gameObject, eventData);
+            }
         }
     }
 
@@ -201,7 +255,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnPointerDown(eventData);
         if (onPointerDown!=null) {
-            onPointerDown(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onPointerDown", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onPointerDown(gameObject, eventData);
+            }
         }
     }
 
@@ -213,7 +274,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnPointerEnter(eventData);
         if (onPointerEnter!=null) {
-            onPointerEnter(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onPointerEnter", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onPointerEnter(gameObject, eventData);
+            }
         }
     }
 
@@ -225,7 +293,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnPointerExit(eventData);
         if (onPointerExit!=null) {
-            onPointerExit(gameObject,eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onPointerExit", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onPointerExit(gameObject, eventData);
+            }
         }
     }
 
@@ -237,7 +312,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnPointerUp(eventData);
         if (onPointerUp!=null) {
-            onPointerUp(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onPointerUp", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onPointerUp(gameObject, eventData);
+            }
         }
     }
 
@@ -249,7 +331,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnScroll(eventData);
         if (onScroll!=null) {
-            onScroll(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onScroll", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onScroll(gameObject, eventData);
+            }
         }
 
     }
@@ -262,7 +351,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnCancel(eventData);
         if (onCancel!=null) {
-            onCancel(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onCancel", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onCancel(gameObject, eventData);
+            }
         }
     }
 
@@ -274,7 +370,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnDeselect(eventData);
         if (onDeselect!=null) {
-            onDeselect(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onDeselect", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onDeselect(gameObject, eventData);
+            }
         }
     }
 
@@ -286,7 +389,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnSelect(eventData);
         if (onSelect!=null) {
-            onSelect(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onSelect", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onSelect(gameObject, eventData);
+            }
         }
     }
 
@@ -298,7 +408,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnSubmit(eventData);
         if (onSubmit!=null) {
-            onSubmit(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onSubmit", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onSubmit(gameObject, eventData);
+            }
         }
     }
 
@@ -310,7 +427,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnUpdateSelected(eventData);
         if (onUpdateSelected!=null) {
-            onUpdateSelected(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onUpdateSelected", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onUpdateSelected(gameObject, eventData);
+            }
         }
     }
 
@@ -322,7 +446,14 @@ public class EventTriggerListener : EventTrigger {
     {
         base.OnMove(eventData);
         if (onMove!=null) {
-            onMove(gameObject, eventData);
+            if (targetTable != null)
+            {
+                targetTable.Call("onMove", targetTable, this.gameObject, eventData);
+            }
+            else
+            {
+                onMove(gameObject, eventData);
+            }
         }
     }
 

@@ -5,23 +5,42 @@
 ---
 
 require("Logic/LLuaComponent")
+require("Logic/GameItem")
+require("Common/eventids")
+local Event = require("events")
+require("EventDispatcher")
+
+local colorOne = 0
+local colorTwo = 1
+local colorThree = 2
+local colorFour = 3
 
 GameLogic = {
-    componentName="",
+    componentName = "",
     ---@type UnityEngine.GameObject
     gameObject = nil,
-    ItemBgs,
+    ItemBgs= nil,
+    ColorOne= nil,
+    ColorTwo= nil,
+    ColorThree= nil,
+    ColorFour= nil,
+    ColorFive= nil,
+    ColorSix= nil,
+    ColorSeven= nil,
+    ColorItemSourceArray= nil,
+    GameItemBgArray= nil,
+    GameItemArray= nil,
 }
 
 GameLogic.__index = GameLogic
 
-setmetatable(GameLogic,LLuaComponent)
+setmetatable(GameLogic, LLuaComponent)
 
 ---@param gameObject UnityEngine.GameObject
-function GameLogic:New(componentName,gameObject)
+function GameLogic:New(componentName, gameObject)
     local result = {}
-    result = LLuaComponent:New(componentName,gameObject)
-    setmetatable(result,GameLogic)
+    result = LLuaComponent:New(componentName, gameObject)
+    setmetatable(result, GameLogic)
     result.componentName = componentName
     result.gameObject = gameObject
     result.self = result
@@ -30,26 +49,76 @@ end
 
 function GameLogic:Awake()
     log("触发继承的Awake")
+    EventDispatcher:AddEventListener(EventIds.ItemClicked,function(itemCom)
+        self:OnGameItemClick(itemCom)
+    end)
     log(self.componentName)
     log(self.gameObject.name)
     self.ItemBgs = self.gameObject.transform:Find('ItemBgs');
-    resMgr:LoadPrefab("gameprefabs",{'BgItem'},function (objs)
+    resMgr:LoadPrefab("gameprefabs", { 'BgItem' }, function(objs)
         self:InitBgItems(objs)
     end)
+
 end
 
 function GameLogic:InitBgItems(objs)
     log(objs[0].name)
+    self.GameItemBgArray = {}
     for x = -4, 4, 1 do
+        self.GameItemBgArray[x] = {}
         for y = 4, -4, -1 do
             ---@type UnityEngine.GameObject
             local item = newObject(objs[0])
             item.transform.parent = self.ItemBgs
-            item.name = x .. y ..''
-            item.transform.position = Vector3(x,y,0)
+            item.name = x .. y .. ''
+            item.transform.position = Vector3(x, y, 0)
+            self.GameItemBgArray[x][y] = item
         end
     end
+    resMgr:LoadPrefab("gameprefabs", { "ColorOne", "ColorTwo", "ColorThree",
+                                       "ColorFour", "ColorFive", "ColorSix", "ColorSeven" }, function(objs1)
+        self:InitGameItem(objs1)
+    end)
     log(self.componentName)
+end
+
+function GameLogic:InitGameItem(objs)
+    self.ColorOne = objs[0]
+    self.ColorTwo = objs[1]
+    self.ColorThree = objs[2]
+    self.ColorFour = objs[3]
+    self.ColorFive = objs[4]
+    self.ColorSix = objs[5]
+    self.ColorSeven = objs[6]
+    self.ColorItemSourceArray = {}
+    for i = 0, 6 do
+        self.ColorItemSourceArray[i+1] = objs[i]
+    end
+    math.randomseed(os.time())
+    self.GameItemArray = {}
+    for x = -4, 4, 1 do
+        self.GameItemArray[x] = {}
+        for y = 4, -4, -1 do
+            local colorIndex = math.random(1,6)
+            ---@type UnityEngine.GameObject
+            local item = newObject(self.ColorItemSourceArray[colorIndex])
+            item.transform.parent = self.GameItemBgArray[x][y].transform
+            item.name = x..y..colorIndex
+            item.transform.localScale = Vector3(1,1,1)
+            item.transform.localPosition = Vector3(0,0,0)
+            local itemCom = GameItem:New('GameItem',item)
+            itemCom.x = x
+            itemCom.y = y
+            local itemCCom = LuaComponent.AddLuaComponent(item,itemCom)
+            self.GameItemArray[x][y] = itemCCom
+        end
+    end
+end
+
+---@param itemCom GameItem
+function GameLogic:OnGameItemClick(itemCom)
+    log(itemCom.gameObject.name..'被点击')
+    log(self.gameObject.name)
 end
 
 return GameLogic

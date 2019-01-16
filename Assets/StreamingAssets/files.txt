@@ -6,10 +6,12 @@ game.unity3d|896839c5a5908864006bbf8c9005594a
 game.unity3d.manifest|ef7cb6db72acb851564065d020239d41
 gameover_asset.unity3d|ec21de07057ba03d80130d9208ce03fc
 gameover_asset.unity3d.manifest|be2ec992476045a68114b199438aa498
-gameprefabs.unity3d|7856d099141f31f6ef4552756deb19f2
-gameprefabs.unity3d.manifest|b8a289273820199291aa7a21ff7660a4
+gameprefabs.unity3d|74a50cc3b550318b5a4214d7aaeaf958
+gameprefabs.unity3d.manifest|89270c1b4b4de5c4fe8b3929925436c6
 gamestart_asset.unity3d|3cc65ced83297e2d7fe9e6c03fff0d41
 gamestart_asset.unity3d.manifest|e2abed7153359f2e46b82edfb406ed42
+game_sweets_asset.unity3d|e419bb643f2c5f4996e2ed8497273937
+game_sweets_asset.unity3d.manifest|0f873e8c0614f4ce6234c4c4c3062321
 message.unity3d|fa06eb99c5405ffb262ce448e1855469
 message.unity3d.manifest|f388942fdc80a396a8b936658201dd32
 prompt.unity3d|d5c1ebe9cc9e1fc8382affd039143c7a
@@ -20,8 +22,8 @@ shared_asset.unity3d|9d3745d9a8ecb771366559468746b630
 shared_asset.unity3d.manifest|c5022fb9c8c7ba31f169635a5ab311f3
 start.unity3d|dca66d4b249150ce2d214cd0da1a7639
 start.unity3d.manifest|047e1f79388706603008eb0af2bd950a
-StreamingAssets|660d1d5f7503d71e4101d231e65bda1b
-StreamingAssets.manifest|0733e51ecc25a29004f7e95f0a2bcf2a
+StreamingAssets|9320663f15a06426c47385fdd5da2ad5
+StreamingAssets.manifest|12e630e8f1977f1727a09ea5f0fdfb98
 update.unity3d|f8a2fbe2ddf4b4fda8133662d8fc873a
 update.unity3d.manifest|072d91d1add3e3f0dad78f848370deda
 update_asset.unity3d|ae70ab5fb0bdbfcddfb18387abe3ded4
@@ -86,7 +88,7 @@ lua/cjson/util.lua|d9187071b6c2cae70ac95cff4170bf36
 lua/Common/define.lua|587d49d786990f86413e7c425adf550f
 lua/Common/functions.lua|ff1ffcc2289a05dccca1387c9b22298c
 lua/Common/protocal.lua|9842a503ab8c2b53be70d0053453337d
-lua/Controller/GameCtrl.lua|2f182ee36b3640763552dffa0867c78c
+lua/Controller/GameCtrl.lua|54aa2c7d9e9133f546c2a4f88fd0176e
 lua/Controller/MessageCtrl.lua|9dae410267472a32b8fa26348bceb859
 lua/Controller/PromptCtrl.lua|0908fd568b2d8cfe5c16a87c7d612dbd
 lua/Controller/StartCtrl.lua|6c5e3c222fc9408b8deb0a941d1917cc
@@ -109,7 +111,8 @@ lua/jit/vmdef.lua|e8408e2f1aa6e62351ca4faeead6ee0b
 lua/jit/zone.lua|a66fcc63674ac8a728d02fb1f9bef4e7
 lua/Logic/CtrlManager.lua|82334a5a91a73af258076e0568fd29ab
 lua/Logic/Game.lua|a84df80c260a584d78c84f3e99a65685
-lua/Logic/GameLogic.lua|f4a82a51ec6cd9f61cc2634cc76112bd
+lua/Logic/GameItem.lua|dcb61fcaff029b0e32a3f7244a6cd036
+lua/Logic/GameLogic.lua|172bc14fb441e91fced9b8593a8cd2c9
 lua/Logic/LLuaComponent.lua|5280016648fea70b782455129fced562
 lua/Logic/LuaClass.lua|281529a11fe604b67523c328f8412cc0
 lua/Logic/Network.lua|18e507f5c1fa3e603dc4815126da1689
@@ -155,7 +158,7 @@ lua/UnityEngine/Touch.lua|fc59927c401fdfd4649f733a58b9357f
 lua/UnityEngine/Vector2.lua|008aeb805bba00e496f53f3049cdeea4
 lua/UnityEngine/Vector3.lua|56fba4bc750a99682372cfec906de515
 lua/UnityEngine/Vector4.lua|6af81ec2235f63adbdbe24bc0fb6b028
-lua/View/GamePanel.lua|68227686365344be7a039306667821c8
+lua/View/GamePanel.lua|feab6d24a0daddce66c36b8eafced43e
 lua/View/MessagePanel.lua|ff069f9c365a283ea608bddf06b71fa4
 lua/View/PromptPanel.lua|d277bbb2e882b6d8da44f1771ed9e959
 lua/View/StartPanel.lua|c79ca2cee1bdb3ea8c18ca2dd2dd411d

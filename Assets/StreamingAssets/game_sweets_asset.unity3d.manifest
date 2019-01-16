@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 1426584982
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 80052de3343433333947d4554a2e44c1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Builds/GameTextures/Sweets/Pink.png
+- Assets/Resources/Builds/GameTextures/Sweets/Blue.png
+- Assets/Resources/Builds/GameTextures/Sweets/Colors.png
+- Assets/Resources/Builds/GameTextures/Sweets/Yellow.png
+- Assets/Resources/Builds/GameTextures/Sweets/BiscuitSpiral.png
+- Assets/Resources/Builds/GameTextures/Sweets/Red.png
+- Assets/Resources/Builds/GameTextures/Sweets/Biscuit.png
+- Assets/Resources/Builds/GameTextures/Sweets/Purple.png
+- Assets/Resources/Builds/GameTextures/Sweets/Green.png
+Dependencies: []

@@ -303,6 +303,7 @@
     <Compile Include="Assets\ThreeMatch\ToLua\Source\Generate\UnityEngine_WWWWrap.cs" />
     <Compile Include="Assets\ThreeMatch\ToLua\Source\Generate\ViewWrap.cs" />
     <Compile Include="Assets\ThreeMatch\ToLua\Source\LuaConst.cs" />
+    <Compile Include="Assets\ThreeMatchGame\Scenes\QAQ.cs" />
     <Compile Include="Assets\ThreeMatchGame\Scripts\ComponentUtil.cs" />
     <Compile Include="Assets\ThreeMatchGame\Scripts\EventTriggerListener.cs" />
     <Compile Include="Assets\ThreeMatchGame\Scripts\GameCamera.cs" />
@@ -315,6 +316,18 @@
     <None Include="Assets\ThreeMatch\ToLua\readme.txt" />
     <None Include="Assets\ThreeMatch\ToLua\Injection\LuaInjectionSkipPaths.txt" />
     <None Include="Assets\ThreeMatch\ToLua\Injection\InjectionBlackList.txt" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>D:/Program/UnityWorkSpace/ThreeTileMatching/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/Program/UnityWorkSpace/ThreeTileMatching/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/Program/UnityWorkSpace/ThreeTileMatching/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/Program/UnityWorkSpace/ThreeTileMatching/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program/Unity2018.2.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>

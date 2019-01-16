@@ -173,7 +173,9 @@ public class Packager {
         AddBuildMap("common_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/UITextures/Common"); 
         AddBuildMap("effects_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/UITextures/Effects");
         AddBuildMap("gameover_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/UITextures/GameOver");
-        AddBuildMap("gamestart_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/UITextures/GameStart");        
+        AddBuildMap("gamestart_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/UITextures/GameStart");
+
+        AddBuildMap("game_sweets_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/GameTextures/Sweets");
     }
 
     /// <summary>

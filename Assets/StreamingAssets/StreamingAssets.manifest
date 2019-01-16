@@ -1,11 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2827874515
+CRC: 2470478357
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: gameprefabs.unity3d
       Dependencies:
         Dependency_0: common_asset.unity3d
+        Dependency_1: game_sweets_asset.unity3d
     Info_1:
       Name: prompt.unity3d
       Dependencies:
@@ -51,4 +52,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_12:
       Name: gamestart_asset.unity3d
+      Dependencies: {}
+    Info_13:
+      Name: game_sweets_asset.unity3d
       Dependencies: {}

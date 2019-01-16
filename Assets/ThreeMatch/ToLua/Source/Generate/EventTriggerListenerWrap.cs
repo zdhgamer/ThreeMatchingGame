@@ -8,6 +8,7 @@ public class EventTriggerListenerWrap
 	{
 		L.BeginClass(typeof(EventTriggerListener), typeof(UnityEngine.EventSystems.EventTrigger));
 		L.RegFunction("GetListener", GetListener);
+		L.RegFunction("SetLuaTable", SetLuaTable);
 		L.RegFunction("OnBeginDrag", OnBeginDrag);
 		L.RegFunction("OnDrag", OnDrag);
 		L.RegFunction("OnDrop", OnDrop);
@@ -60,6 +61,23 @@ public class EventTriggerListenerWrap
 			EventTriggerListener o = EventTriggerListener.GetListener(arg0);
 			ToLua.Push(L, o);
 			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetLuaTable(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			EventTriggerListener obj = (EventTriggerListener)ToLua.CheckObject<EventTriggerListener>(L, 1);
+			LuaTable arg0 = ToLua.CheckLuaTable(L, 2);
+			obj.SetLuaTable(arg0);
+			return 0;
 		}
 		catch (Exception e)
 		{
