@@ -14,6 +14,7 @@ Event = require("events")
 GameItem = {
     x,
     y,
+    colorIndex,
     moveSpeed = 0.25,
 
 }
@@ -37,10 +38,10 @@ end
 
 function GameItem:onPointerClick(go, eventData)
     log('点击了' .. self.x .. self.y .. '位置上的Item')
-    EventDispatcher:Dispatcher(EventIds.ItemClicked, self, self)
+    EventDispatcher:Dispatcher(EventIds.ItemClicked, self)
 end
 
-function GameItem:MoveTo(toX, toY)
+function GameItem:MoveTo(toX, toY, callback)
     local ox = self.x - toX
     local oy = self.y - toY
     local dur = self.moveSpeed * 1
@@ -51,7 +52,9 @@ function GameItem:MoveTo(toX, toY)
     end
     ---@type UnityEngine.Transform
     self.transform = self.gameObject.transform
-    self.transform:DOMove(Vector3(toX,toY,0),dur)
+    ---@type
+    local tweener = self.transform:DOMove(Vector3(toX, toY, 0), dur)
+    tweener.onComplete = callback
 end
 
 return GameItem

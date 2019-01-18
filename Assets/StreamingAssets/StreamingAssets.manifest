@@ -1,58 +1,118 @@
 ManifestFileVersion: 0
-CRC: 2470478357
+CRC: 560863303
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
+      Name: lua/lua_cjson.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: lua/lua_common.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: lua/lua_controller.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: lua/lua_jit.unity3d
+      Dependencies: {}
+    Info_4:
+      Name: lua/lua_logic.unity3d
+      Dependencies: {}
+    Info_5:
+      Name: lua/lua_lpeg.unity3d
+      Dependencies: {}
+    Info_6:
+      Name: lua/lua_misc.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: lua/lua_protobuf.unity3d
+      Dependencies: {}
+    Info_8:
+      Name: lua/lua_socket.unity3d
+      Dependencies: {}
+    Info_9:
+      Name: lua/lua_system.unity3d
+      Dependencies: {}
+    Info_10:
+      Name: lua/lua_unityengine.unity3d
+      Dependencies: {}
+    Info_11:
+      Name: lua/lua_view.unity3d
+      Dependencies: {}
+    Info_12:
+      Name: lua/lua_3rd_cjson.unity3d
+      Dependencies: {}
+    Info_13:
+      Name: lua/lua_3rd_luabitop.unity3d
+      Dependencies: {}
+    Info_14:
+      Name: lua/lua_3rd_pbc.unity3d
+      Dependencies: {}
+    Info_15:
+      Name: lua/lua_3rd_pblua.unity3d
+      Dependencies: {}
+    Info_16:
+      Name: lua/lua_3rd_sproto.unity3d
+      Dependencies: {}
+    Info_17:
+      Name: lua/lua_system_injection.unity3d
+      Dependencies: {}
+    Info_18:
+      Name: lua/lua_system_reflection.unity3d
+      Dependencies: {}
+    Info_19:
+      Name: lua/lua.unity3d
+      Dependencies: {}
+    Info_20:
       Name: gameprefabs.unity3d
       Dependencies:
         Dependency_0: common_asset.unity3d
         Dependency_1: game_sweets_asset.unity3d
-    Info_1:
+    Info_21:
       Name: prompt.unity3d
       Dependencies:
         Dependency_0: prompt_asset.unity3d
         Dependency_1: shared_asset.unity3d
-    Info_2:
+    Info_22:
       Name: message.unity3d
       Dependencies:
         Dependency_0: shared_asset.unity3d
-    Info_3:
+    Info_23:
       Name: update.unity3d
       Dependencies:
         Dependency_0: common_asset.unity3d
         Dependency_1: gamestart_asset.unity3d
-    Info_4:
+    Info_24:
       Name: start.unity3d
       Dependencies:
         Dependency_0: common_asset.unity3d
         Dependency_1: effects_asset.unity3d
         Dependency_2: gamestart_asset.unity3d
-    Info_5:
+    Info_25:
       Name: game.unity3d
       Dependencies:
         Dependency_0: update_asset.unity3d
         Dependency_1: common_asset.unity3d
-    Info_6:
+    Info_26:
       Name: prompt_asset.unity3d
       Dependencies: {}
-    Info_7:
+    Info_27:
       Name: shared_asset.unity3d
       Dependencies: {}
-    Info_8:
+    Info_28:
       Name: update_asset.unity3d
       Dependencies: {}
-    Info_9:
+    Info_29:
       Name: common_asset.unity3d
       Dependencies: {}
-    Info_10:
+    Info_30:
       Name: effects_asset.unity3d
       Dependencies: {}
-    Info_11:
+    Info_31:
       Name: gameover_asset.unity3d
       Dependencies: {}
-    Info_12:
+    Info_32:
       Name: gamestart_asset.unity3d
       Dependencies: {}
-    Info_13:
+    Info_33:
       Name: game_sweets_asset.unity3d
       Dependencies: {}

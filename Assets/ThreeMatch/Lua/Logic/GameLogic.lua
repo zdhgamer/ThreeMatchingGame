@@ -19,17 +19,20 @@ GameLogic = {
     componentName = "",
     ---@type UnityEngine.GameObject
     gameObject = nil,
-    ItemBgs= nil,
-    ColorOne= nil,
-    ColorTwo= nil,
-    ColorThree= nil,
-    ColorFour= nil,
-    ColorFive= nil,
-    ColorSix= nil,
-    ColorSeven= nil,
-    ColorItemSourceArray= nil,
-    GameItemBgArray= nil,
-    GameItemArray= nil,
+    ItemBgs = nil,
+    ColorOne = nil,
+    ColorTwo = nil,
+    ColorThree = nil,
+    ColorFour = nil,
+    ColorFive = nil,
+    ColorSix = nil,
+    ColorSeven = nil,
+    ColorItemSourceArray = nil,
+    GameItemBgArray = nil,
+    GameItemArray = nil,
+
+    LastClickOne,
+    NextClickOne,
 }
 
 GameLogic.__index = GameLogic
@@ -49,7 +52,7 @@ end
 
 function GameLogic:Awake()
     log("触发继承的Awake")
-    EventDispatcher:AddEventListener(EventIds.ItemClicked,function(itemCom)
+    EventDispatcher:AddEventListener(EventIds.ItemClicked, function(itemCom)
         self:OnGameItemClick(itemCom)
     end)
     log(self.componentName)
@@ -77,48 +80,450 @@ function GameLogic:InitBgItems(objs)
     end
     resMgr:LoadPrefab("gameprefabs", { "ColorOne", "ColorTwo", "ColorThree",
                                        "ColorFour", "ColorFive", "ColorSix", "ColorSeven" }, function(objs1)
-        self:InitGameItem(objs1)
+        self.ColorOne = objs1[0]
+        self.ColorTwo = objs1[1]
+        self.ColorThree = objs1[2]
+        self.ColorFour = objs1[3]
+        self.ColorFive = objs1[4]
+        self.ColorSix = objs1[5]
+        self.ColorSeven = objs1[6]
+        self.ColorItemSourceArray = {}
+        for i = 0, 6 do
+            self.ColorItemSourceArray[i + 1] = objs1[i]
+        end
+        self:InitGameItem()
     end)
     log(self.componentName)
 end
 
-function GameLogic:InitGameItem(objs)
-    self.ColorOne = objs[0]
-    self.ColorTwo = objs[1]
-    self.ColorThree = objs[2]
-    self.ColorFour = objs[3]
-    self.ColorFive = objs[4]
-    self.ColorSix = objs[5]
-    self.ColorSeven = objs[6]
-    self.ColorItemSourceArray = {}
-    for i = 0, 6 do
-        self.ColorItemSourceArray[i+1] = objs[i]
-    end
+--初始化游戏小方块
+function GameLogic:InitGameItem()
     math.randomseed(os.time())
     self.GameItemArray = {}
     for x = -4, 4, 1 do
         self.GameItemArray[x] = {}
         for y = 4, -4, -1 do
-            local colorIndex = math.random(1,6)
+            local colorIndex = math.random(1, 6)
             ---@type UnityEngine.GameObject
             local item = newObject(self.ColorItemSourceArray[colorIndex])
             item.transform.parent = self.GameItemBgArray[x][y].transform
-            item.name = x..y..colorIndex
-            item.transform.localScale = Vector3(1,1,1)
-            item.transform.localPosition = Vector3(0,0,0)
-            local itemCom = GameItem:New('GameItem',item)
+            item.name = x .. y .. colorIndex
+            item.transform.localScale = Vector3(1, 1, 1)
+            item.transform.localPosition = Vector3(0, 0, 0)
+            local itemCom = GameItem:New('GameItem', item)
             itemCom.x = x
             itemCom.y = y
-            local itemCCom = LuaComponent.AddLuaComponent(item,itemCom)
-            self.GameItemArray[x][y] = itemCCom
+            itemCom.colorIndex = colorIndex
+            local itemCCom = LuaComponent.AddLuaComponent(item, itemCom)
+            self.GameItemArray[x][y] = itemCom
+        end
+    end
+    local dead = self:CheckIsDeadMap()
+    if not dead then
+        self:ClearGameItems()
+        self:InitGameItem()
+    end
+
+    local canDis = self:GetCanClearItems()
+
+    for key, value in ipairs(canDis) do
+        for ii, vv in ipairs(value) do
+            log(tostring(vv.gameObject.name))
+        end
+    end
+
+    self:ClearDisGameItem(canDis)
+
+end
+
+--清楚集合中的可以消除的数据
+function GameLogic:ClearDisGameItem(total)
+    for key, value in ipairs(total) do
+        for ii, vv in ipairs(value) do
+            self.GameItemArray[vv.x][vv.y] = nil
+            destroy(vv.gameObject)
         end
     end
 end
 
+function GameLogic:ClearBgItems()
+    for x = -4, 4, 1 do
+        for y = 4, -4, -1 do
+            destroy(self.GameItemBgArray[x][y])
+            self.GameItemBgArray[x][y] = nil
+        end
+    end
+    self.GameItemBgArray = {}
+end
+
+function GameLogic:ClearGameItems()
+    for x = -4, 4, 1 do
+        for y = 4, -4, -1 do
+            destroy(self.GameItemArray[x][y].gameObject)
+            self.GameItemArray[x][y] = nil
+        end
+    end
+    self.GameItemArray = {}
+end
+
+--点击小方块，接受到的事件
 ---@param itemCom GameItem
 function GameLogic:OnGameItemClick(itemCom)
-    log(itemCom.gameObject.name..'被点击')
+    log(itemCom.x .. itemCom.y .. '被点击')
     log(self.gameObject.name)
+
+    --第一次点击赋值
+    if self.LastClickOne == nil then
+        self.LastClickOne = itemCom
+    end
+
+    --第二次点击
+    if self.LastClickOne ~= nil then
+        --点击到同一个
+        if itemCom.x == self.LastClickOne.x and itemCom.y == self.LastClickOne.y then
+            self.LastClickOne = itemCom
+        elseif self:CheckIsCanExchange(itemCom, self.LastClickOne) then
+            --点击的是周围的其他一个，这时候需要交换位置，然后判定消除
+            local canDis = self:GetTwoItemExChangCanDIsGroup(itemCom, self.LastClickOne)
+            if #canDis > 0 then
+                --可以消除
+                self.NextClickOne = itemCom
+                self:ExchangTwoGameItem(self.LastClickOne, itemCom)
+                self.LastClickOne = nil
+                self.NextClickOne = nil
+            else
+                self.LastClickOne = nil
+                self.NextClickOne = nil
+            end
+        else
+            --点到不是周围的那一个
+            self.LastClickOne = itemCom
+        end
+    end
+
+end
+
+--交换两个的位置和父节点
+---@param itemOne GameItem
+---@param itemTwo GameItem
+function GameLogic:ExchangTwoGameItem(itemOne, itemTwo)
+
+    self.LastClickOne = nil
+    self.NextClickOne = nil
+
+    local oneParent = itemOne.gameObject.transform.parent
+    local twoParent = itemTwo.gameObject.transform.parent
+
+    local itemOneX = itemOne.x
+    local itemOneY = itemOne.y
+
+    local itemTwoX = itemTwo.x
+    local itemTwoY = itemTwo.y
+
+    itemOne:MoveTo(itemTwo.x, itemTwo.y, function()
+        itemOne.gameObject.transform.parent = twoParent
+        itemOne.gameObject.transform.localPosition = Vector3(0, 0, 0)
+        itemOne.x = itemTwoX
+        itemOne.y = itemTwoY
+        itemOne.gameObject.name = itemTwoX .. itemTwoY .. itemOne.colorIndex
+    end)
+
+    itemTwo:MoveTo(itemOne.x, itemOne.y, function()
+        itemTwo.gameObject.transform.parent = oneParent
+        itemTwo.gameObject.transform.localPosition = Vector3(0, 0, 0)
+        itemTwo.x = itemOneX
+        itemTwo.y = itemOneY
+        itemTwo.gameObject.name = itemOneX .. itemOneY .. itemTwo.colorIndex
+    end)
+end
+
+--判断两个item是否可以交换
+function GameLogic:CheckIsCanExchange(itemOne, itemTwo)
+    local result = false
+
+    if itemOne.x == itemTwo.x and itemOne.y == itemTwo.y then
+        return result
+    end
+
+    if itemOne.colorIndex == itemTwo.colorIndex then
+        return result
+    end
+
+    if math.abs(itemOne.x - itemTwo.x) <= 1 and math.abs(itemOne.y - itemTwo.y) <= 1 then
+        if math.abs(itemOne.x - itemTwo.x) <= 1 and math.abs(itemOne.y - itemTwo.y) <= 0 then
+            result = true
+        end
+        if math.abs(itemOne.x - itemTwo.x) <= 0 and math.abs(itemOne.y - itemTwo.y) <= 1 then
+            result = true
+        end
+    end
+
+    return result
+end
+
+--收集两个交换之后的可以消除的结果
+function GameLogic:GetTwoItemExChangCanDIsGroup(itemOne, itemTwo)
+
+    local result = {}
+
+    local oneColorIndex = itemOne.colorIndex
+    local twoColorIndex = itemTwo.colorIndex
+
+    itemOne.colorIndex = twoColorIndex
+    itemTwo.colorIndex = oneColorIndex
+
+    --交换之后的可消除一行
+    local oneRow = {}
+    self:GetItemRows(oneRow, itemOne)
+    --交换之后的可消除一列
+    local oneCol = {}
+    self:GetItemCols(oneCol, itemOne)
+
+    local twoRow = {}
+    self:GetItemRows(twoRow, itemTwo)
+
+    local twoCol = {}
+    self:GetItemCols(twoCol, itemTwo)
+
+    if #oneRow >= 3 then
+        result[#result + 1] = oneRow
+        log(oneRow[1].gameObject.name .. oneRow[2].gameObject.name .. oneRow[3].gameObject.name)
+    end
+
+    if #oneCol >= 3 then
+        result[#result + 1] = oneCol
+        log(oneCol[1].gameObject.name .. oneCol[2].gameObject.name .. oneCol[3].gameObject.name)
+    end
+
+    if #twoRow >= 3 then
+        result[#result + 1] = twoRow
+        log(twoRow[1].gameObject.name .. twoRow[2].gameObject.name .. twoRow[3].gameObject.name)
+    end
+
+    if #twoCol >= 3 then
+        result[#result + 1] = twoCol
+        log(twoCol[1].gameObject.name .. twoCol[2].gameObject.name .. twoCol[3].gameObject.name)
+    end
+
+    itemOne.colorIndex = oneColorIndex
+    itemTwo.colorIndex = twoColorIndex
+
+    return result
+
+end
+
+--收集可以被消除的items{}
+function GameLogic:GetCanClearItems()
+    local result = {}
+
+    for x = -4, 4, 1 do
+        for y = 4, -4, -1 do
+            local tempCol = {}
+            self:GetItemCols(tempCol, self.GameItemArray[x][y])
+            if #tempCol >= 3 then
+                if self:CanContain(result, tempCol) then
+                    result[#result + 1] = tempCol
+                end
+            end
+            local tempRow = {}
+            self:GetItemRows(tempRow, self.GameItemArray[x][y])
+            if #tempRow >= 3 then
+                if self:CanContain(result, tempRow) then
+                    result[#result + 1] = tempRow
+                end
+            end
+        end
+    end
+
+    --local realResult = {}
+    --
+    --if #result >= 1 then
+    --    for i = 1, #result do
+    --        if #result[i] >= 1 then
+    --            for j = 1, #result[i] do
+    --                if #realResult >= 1 then
+    --                    local contain = false
+    --                    for k = 1, #realResult do
+    --                        if realResult[k].gameObject.name == result[i][j].gameObject.name then
+    --                            contain = true
+    --                        end
+    --                    end
+    --                    if not contain then
+    --                        realResult[#realResult + 1] = result[i][j]
+    --                    end
+    --                end
+    --            end
+    --        end
+    --    end
+    --end
+    --
+    --return realResult
+
+    return result
+
+end
+
+--判断是否可以被加入进来 true 是可以被加入 false是已经包含了
+function GameLogic:CanContain(total, target)
+    result = true
+    for i, v in ipairs(total) do
+        if #v == #target then
+            local count = 0
+            for k = 1, #v do
+                for p = 1, #v do
+                    if v[k].gameObject.name == target[p].gameObject.name then
+                        count = count + 1
+                    end
+                end
+            end
+            if count == #target then
+                result = false
+            end
+        end
+    end
+
+    return result
+end
+
+--获取这这一列相邻且颜色相同的集合
+function GameLogic:GetItemCols(result, itemCom)
+    result[#result + 1] = itemCom
+    self:GetItemColUp(result, itemCom)
+    self:GetItemColDown(result, itemCom)
+    return result
+end
+
+--一列向上
+function GameLogic:GetItemColUp(result, itemCom)
+    if self.GameItemArray[itemCom.x][itemCom.y + 1] ~= nil and self.GameItemArray[itemCom.x][itemCom.y + 1].colorIndex == itemCom.colorIndex then
+        result[#result + 1] = self.GameItemArray[itemCom.x][itemCom.y + 1]
+        self:GetItemColUp(result, self.GameItemArray[itemCom.x][itemCom.y + 1])
+    end
+end
+
+--一列向下
+function GameLogic:GetItemColDown(result, itemCom)
+    if self.GameItemArray[itemCom.x][itemCom.y - 1] ~= nil and self.GameItemArray[itemCom.x][itemCom.y - 1].colorIndex == itemCom.colorIndex then
+        result[#result + 1] = self.GameItemArray[itemCom.x][itemCom.y - 1]
+        self:GetItemColDown(result, self.GameItemArray[itemCom.x][itemCom.y - 1])
+    end
+end
+
+--获取这一行且相邻颜色相同的
+function GameLogic:GetItemRows(result, itemCom)
+    result[#result + 1] = itemCom
+    self:GetItemRowsRight(result, itemCom)
+    self:GetItemRowsLeft(result, itemCom)
+    return result
+end
+
+--一行向左
+function GameLogic:GetItemRowsLeft(result, itemCom)
+    if self.GameItemArray[itemCom.x - 1] ~= nil and self.GameItemArray[itemCom.x - 1][itemCom.y].colorIndex == itemCom.colorIndex then
+        result[#result + 1] = self.GameItemArray[itemCom.x - 1][itemCom.y]
+        self:GetItemRowsLeft(result, self.GameItemArray[itemCom.x - 1][itemCom.y])
+    end
+end
+
+--一行向右
+function GameLogic:GetItemRowsRight(result, itemCom)
+    if self.GameItemArray[itemCom.x + 1] ~= nil and self.GameItemArray[itemCom.x + 1][itemCom.y].colorIndex == itemCom.colorIndex then
+        result[#result + 1] = self.GameItemArray[itemCom.x + 1][itemCom.y]
+        self:GetItemRowsRight(result, self.GameItemArray[itemCom.x + 1][itemCom.y])
+    end
+end
+
+
+--检测是否是死图
+function GameLogic:CheckIsDeadMap()
+    local result = true
+    for x = -4, 4, 1 do
+        for y = 4, -4, -1 do
+            local result = self:CheckItemCanThree(self.GameItemArray[x][y])
+            if #result > 1 then
+                result = false
+                break
+            end
+        end
+    end
+    return result
+end
+
+--检测一个item是否可以消除，返回可以被含有他消除的所有集合{{item1,item2,item3}，{item1,item2,item3}}
+function GameLogic:CheckItemCanThree(itemCom)
+    local leftTop = nil
+    if self.GameItemArray[itemCom.x - 1] ~= nil then
+        leftTop = self.GameItemArray[itemCom.x - 1][itemCom.y + 1]
+    end
+
+    local top = nil
+    if self.GameItemArray[itemCom.x] ~= nil then
+        top = self.GameItemArray[itemCom.x][itemCom.y + 1]
+    end
+
+    local rightTop = nil
+    if self.GameItemArray[itemCom.x + 1] ~= nil then
+        rightTop = self.GameItemArray[itemCom.x + 1][itemCom.y + 1]
+    end
+
+    local left = nil
+    if self.GameItemArray[itemCom.x - 1] ~= nil then
+        left = self.GameItemArray[itemCom.x - 1][itemCom.y]
+    end
+
+    local right = nil
+    if self.GameItemArray[itemCom.x + 1] ~= nil then
+        right = self.GameItemArray[itemCom.x + 1][itemCom.y]
+    end
+
+    local leftBottom = nil
+    if self.GameItemArray[itemCom.x - 1] ~= nil then
+        leftBottom = self.GameItemArray[itemCom.x - 1][itemCom.y - 1]
+    end
+
+    local bottom = nil
+    if self.GameItemArray[itemCom.x] ~= nil then
+        bottom = self.GameItemArray[itemCom.x][itemCom.y - 1]
+    end
+
+    local rightBottom = nil
+    if self.GameItemArray[itemCom.x + 1] ~= nil then
+        rightBottom = self.GameItemArray[itemCom.x + 1][itemCom.y - 1]
+    end
+
+    local result = {}
+
+    --最上面那一行
+    if leftTop ~= nil and rightTop ~= nil and leftTop.colorIndex == itemCom.colorIndex and rightTop.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { leftTop, itemCom, rightTop }
+    end
+
+    --中间那一行
+    if left ~= nil and right ~= nil and left.colorIndex == itemCom.colorIndex and right.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { left, itemCom, right }
+    end
+
+    --下面那一行
+    if leftBottom ~= nil and rightBottom ~= nil and leftBottom.colorIndex == itemCom.colorIndex and rightBottom.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { leftBottom, itemCom, rightBottom }
+    end
+
+    --最左边那一列
+    if leftTop ~= nil and leftBottom ~= nil and leftTop.colorIndex == itemCom.colorIndex and leftBottom.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { leftTop, itemCom, leftBottom }
+    end
+
+    --中间那一列
+    if top ~= nil and bottom ~= nil and top.colorIndex == itemCom.colorIndex and bottom.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { top, itemCom, bottom }
+    end
+
+    --最右边那一列
+    if rightTop ~= nil and rightBottom ~= nil and rightTop.colorIndex == itemCom.colorIndex and rightBottom.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { rightTop, itemCom, rightBottom }
+    end
+
+    return result
 end
 
 return GameLogic
