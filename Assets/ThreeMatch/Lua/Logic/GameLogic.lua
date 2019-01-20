@@ -119,21 +119,132 @@ function GameLogic:InitGameItem()
         end
     end
     local dead = self:CheckIsDeadMap()
-    if not dead then
+    if dead then
         self:ClearGameItems()
         self:InitGameItem()
     end
+    self:DoClear()
 
+end
+
+--执行消除，下落，填充操作
+function GameLogic:DoClear()
     local canDis = self:GetCanClearItems()
+    local total = self:GetTotal(canDis)
+    self:ClearDisGameItem(canDis)
+    self:DownToFit(function()
+        log('+++++++++++++++++++++++++++++++++++++++++++++++++')
+        self:InstantiateDownGameItem(total, function()
+            log('cccccccccccccccbbbbbbbbbbb')
+            canDis = self:GetCanClearItems()
+            log('------------------------------------' .. tostring(#canDis))
+            log(self.gameObject.name)
+            if #canDis > 0 then
+                self:DoClear()
+            end
+        end)
+    end)
+end
 
-    for key, value in ipairs(canDis) do
-        for ii, vv in ipairs(value) do
-            log(tostring(vv.gameObject.name))
+
+--获取二维数组的总大小
+function GameLogic:GetTotal(target)
+    local temp = {}
+    for key1, value1 in ipairs(target) do
+        for key2, value2 in ipairs(value1) do
+            local contain = false
+            for i = 1, #temp do
+                if temp[i].gameObject.name == value2.gameObject.name then
+                    contain = true
+                end
+            end
+
+            if not contain then
+                temp[#temp + 1] = value2
+            end
         end
     end
 
-    self:ClearDisGameItem(canDis)
+    return #temp
+end
 
+--生成新的游戏item，然后使之下落
+function GameLogic:InstantiateDownGameItem(total, callback)
+    math.randomseed(os.time())
+    local temp = { count = 0 }
+    for x = -4, 4, 1 do
+        coroutine.start(self.NewNewGameItem, self, temp, total, x, callback)
+    end
+end
+
+--生成新得到item
+function GameLogic:NewNewGameItem(tempCount, total, x, callback)
+    for y = -4, 4, 1 do
+        if self.GameItemArray[x][y] == nil then
+            local colorIndex = math.random(1, 6)
+            ---@type UnityEngine.GameObject
+            local item = newObject(self.ColorItemSourceArray[colorIndex])
+            item.transform.parent = self.GameItemBgArray[x][y].transform
+            item.name = x .. y .. colorIndex
+            item.transform.localScale = Vector3(1, 1, 1)
+            item.transform.position = Vector3(x, 5, 0)
+            local itemCom = GameItem:New('GameItem', item)
+            itemCom.x = x
+            itemCom.y = y
+            local length = 5 - itemCom.y
+            itemCom.colorIndex = colorIndex
+            local itemCCom = LuaComponent.AddLuaComponent(item, itemCom)
+            self.GameItemArray[x][y] = itemCom
+            itemCom:MoveTo(x, y, function()
+                tempCount.count = tempCount.count + 1
+                log('countcountcountcountcountcount' .. tostring(tempCount.count))
+                log('totaltotaltotaltotaltotaltotaltotaltotal' .. tostring(total))
+                if tempCount.count >= total then
+                    if callback ~= nil then
+                        callback()
+                    end
+                end
+            end, length)
+        end
+        coroutine.wait(0.25)
+    end
+end
+
+--消除之后，使悬空的所有item，下落到合适的位置上面去
+function GameLogic:DownToFit(callback)
+    local calledCount = 0
+    local count = 0
+    for x = -4, 4, 1 do
+        for y = -4, 4, 1 do
+            --需要这一个是nil的格子，上面的才能往下面落
+            if self.GameItemArray[x][y] == nil then
+                for yy = y + 1, 4, 1 do
+                    if self.GameItemArray[x][yy] ~= nil then
+                        count = count + 1
+                        local length = yy - y
+                        ---@type GameItem
+                        self.GameItemArray[x][y] = self.GameItemArray[x][yy]
+                        self.GameItemArray[x][yy] = nil
+                        self.GameItemArray[x][y].x = x
+                        self.GameItemArray[x][y].y = y
+                        self.GameItemArray[x][y].gameObject.name = x .. y .. self.GameItemArray[x][y].colorIndex
+                        self.GameItemArray[x][y]:MoveTo(x, y, function()
+                            self.GameItemArray[x][y].gameObject.transform.parent = self.GameItemBgArray[x][y].gameObject.transform
+                            self.GameItemArray[x][y].gameObject.transform.localPosition = Vector3(0, 0, 0)
+                            calledCount = calledCount + 1
+                            if calledCount >= count and callback ~= nil then
+                                callback()
+                            end
+                        end, length)
+                        break
+                    end
+                end
+            end
+        end
+    end
+    if count == 0 and callback ~= nil then
+        callback()
+    end
 end
 
 --清楚集合中的可以消除的数据
@@ -220,6 +331,8 @@ function GameLogic:ExchangTwoGameItem(itemOne, itemTwo)
     local itemTwoX = itemTwo.x
     local itemTwoY = itemTwo.y
 
+    self.GameItemArray[itemOneX][itemOneY], self.GameItemArray[itemTwoX][itemTwoY] = itemTwo, itemOne
+
     itemOne:MoveTo(itemTwo.x, itemTwo.y, function()
         itemOne.gameObject.transform.parent = twoParent
         itemOne.gameObject.transform.localPosition = Vector3(0, 0, 0)
@@ -234,6 +347,7 @@ function GameLogic:ExchangTwoGameItem(itemOne, itemTwo)
         itemTwo.x = itemOneX
         itemTwo.y = itemOneY
         itemTwo.gameObject.name = itemOneX .. itemOneY .. itemTwo.colorIndex
+        self:DoClear()
     end)
 end
 
@@ -287,22 +401,18 @@ function GameLogic:GetTwoItemExChangCanDIsGroup(itemOne, itemTwo)
 
     if #oneRow >= 3 then
         result[#result + 1] = oneRow
-        log(oneRow[1].gameObject.name .. oneRow[2].gameObject.name .. oneRow[3].gameObject.name)
     end
 
     if #oneCol >= 3 then
         result[#result + 1] = oneCol
-        log(oneCol[1].gameObject.name .. oneCol[2].gameObject.name .. oneCol[3].gameObject.name)
     end
 
     if #twoRow >= 3 then
         result[#result + 1] = twoRow
-        log(twoRow[1].gameObject.name .. twoRow[2].gameObject.name .. twoRow[3].gameObject.name)
     end
 
     if #twoCol >= 3 then
         result[#result + 1] = twoCol
-        log(twoCol[1].gameObject.name .. twoCol[2].gameObject.name .. twoCol[3].gameObject.name)
     end
 
     itemOne.colorIndex = oneColorIndex
@@ -319,45 +429,26 @@ function GameLogic:GetCanClearItems()
     for x = -4, 4, 1 do
         for y = 4, -4, -1 do
             local tempCol = {}
-            self:GetItemCols(tempCol, self.GameItemArray[x][y])
-            if #tempCol >= 3 then
-                if self:CanContain(result, tempCol) then
-                    result[#result + 1] = tempCol
+            if self.GameItemArray[x] ~= nil and self.GameItemArray[x][y] ~= nil then
+                self:GetItemCols(tempCol, self.GameItemArray[x][y])
+                if #tempCol >= 3 then
+                    if self:CanContain(result, tempCol) then
+                        result[#result + 1] = tempCol
+                    end
                 end
             end
+
             local tempRow = {}
-            self:GetItemRows(tempRow, self.GameItemArray[x][y])
-            if #tempRow >= 3 then
-                if self:CanContain(result, tempRow) then
-                    result[#result + 1] = tempRow
+            if self.GameItemArray[x] ~= nil and self.GameItemArray[x][y] ~= nil then
+                self:GetItemRows(tempRow, self.GameItemArray[x][y])
+                if #tempRow >= 3 then
+                    if self:CanContain(result, tempRow) then
+                        result[#result + 1] = tempRow
+                    end
                 end
             end
         end
     end
-
-    --local realResult = {}
-    --
-    --if #result >= 1 then
-    --    for i = 1, #result do
-    --        if #result[i] >= 1 then
-    --            for j = 1, #result[i] do
-    --                if #realResult >= 1 then
-    --                    local contain = false
-    --                    for k = 1, #realResult do
-    --                        if realResult[k].gameObject.name == result[i][j].gameObject.name then
-    --                            contain = true
-    --                        end
-    --                    end
-    --                    if not contain then
-    --                        realResult[#realResult + 1] = result[i][j]
-    --                    end
-    --                end
-    --            end
-    --        end
-    --    end
-    --end
-    --
-    --return realResult
 
     return result
 
@@ -395,17 +486,26 @@ end
 
 --一列向上
 function GameLogic:GetItemColUp(result, itemCom)
-    if self.GameItemArray[itemCom.x][itemCom.y + 1] ~= nil and self.GameItemArray[itemCom.x][itemCom.y + 1].colorIndex == itemCom.colorIndex then
-        result[#result + 1] = self.GameItemArray[itemCom.x][itemCom.y + 1]
-        self:GetItemColUp(result, self.GameItemArray[itemCom.x][itemCom.y + 1])
+    if itemCom ~= nil then
+        local nextX = itemCom.x
+        local nextY = itemCom.y + 1
+
+        if self.GameItemArray[itemCom.x] ~= nil and self.GameItemArray[nextX][nextY] ~= nil and self.GameItemArray[nextX][nextY].colorIndex == itemCom.colorIndex then
+            result[#result + 1] = self.GameItemArray[nextX][nextY]
+            self:GetItemColUp(result, self.GameItemArray[nextX][nextY])
+        end
     end
 end
 
 --一列向下
 function GameLogic:GetItemColDown(result, itemCom)
-    if self.GameItemArray[itemCom.x][itemCom.y - 1] ~= nil and self.GameItemArray[itemCom.x][itemCom.y - 1].colorIndex == itemCom.colorIndex then
-        result[#result + 1] = self.GameItemArray[itemCom.x][itemCom.y - 1]
-        self:GetItemColDown(result, self.GameItemArray[itemCom.x][itemCom.y - 1])
+    if itemCom ~= nil then
+        local nextX = itemCom.x
+        local nextY = itemCom.y - 1
+        if self.GameItemArray[itemCom.x] ~= nil and self.GameItemArray[nextX][nextY] ~= nil and self.GameItemArray[nextX][nextY].colorIndex == itemCom.colorIndex then
+            result[#result + 1] = self.GameItemArray[nextX][nextY]
+            self:GetItemColDown(result, self.GameItemArray[nextX][nextY])
+        end
     end
 end
 
@@ -419,17 +519,21 @@ end
 
 --一行向左
 function GameLogic:GetItemRowsLeft(result, itemCom)
-    if self.GameItemArray[itemCom.x - 1] ~= nil and self.GameItemArray[itemCom.x - 1][itemCom.y].colorIndex == itemCom.colorIndex then
-        result[#result + 1] = self.GameItemArray[itemCom.x - 1][itemCom.y]
-        self:GetItemRowsLeft(result, self.GameItemArray[itemCom.x - 1][itemCom.y])
+    if itemCom ~= nil then
+        if self.GameItemArray[itemCom.x - 1] ~= nil and self.GameItemArray[itemCom.x - 1][itemCom.y] ~= nil and self.GameItemArray[itemCom.x - 1][itemCom.y].colorIndex == itemCom.colorIndex then
+            result[#result + 1] = self.GameItemArray[itemCom.x - 1][itemCom.y]
+            self:GetItemRowsLeft(result, self.GameItemArray[itemCom.x - 1][itemCom.y])
+        end
     end
 end
 
 --一行向右
 function GameLogic:GetItemRowsRight(result, itemCom)
-    if self.GameItemArray[itemCom.x + 1] ~= nil and self.GameItemArray[itemCom.x + 1][itemCom.y].colorIndex == itemCom.colorIndex then
-        result[#result + 1] = self.GameItemArray[itemCom.x + 1][itemCom.y]
-        self:GetItemRowsRight(result, self.GameItemArray[itemCom.x + 1][itemCom.y])
+    if itemCom ~= nil then
+        if self.GameItemArray[itemCom.x + 1] ~= nil and self.GameItemArray[itemCom.x + 1][itemCom.y] ~= nil and self.GameItemArray[itemCom.x + 1][itemCom.y].colorIndex == itemCom.colorIndex then
+            result[#result + 1] = self.GameItemArray[itemCom.x + 1][itemCom.y]
+            self:GetItemRowsRight(result, self.GameItemArray[itemCom.x + 1][itemCom.y])
+        end
     end
 end
 
@@ -439,13 +543,14 @@ function GameLogic:CheckIsDeadMap()
     local result = true
     for x = -4, 4, 1 do
         for y = 4, -4, -1 do
-            local result = self:CheckItemCanThree(self.GameItemArray[x][y])
-            if #result > 1 then
+            local temp = self:CheckItemCanThree(self.GameItemArray[x][y])
+            if #temp > 1 then
                 result = false
                 break
             end
         end
     end
+    log(tostring(result) .. '...............................')
     return result
 end
 
@@ -521,6 +626,40 @@ function GameLogic:CheckItemCanThree(itemCom)
     --最右边那一列
     if rightTop ~= nil and rightBottom ~= nil and rightTop.colorIndex == itemCom.colorIndex and rightBottom.colorIndex == itemCom.colorIndex then
         result[#result + 1] = { rightTop, itemCom, rightBottom }
+    end
+
+    --中间一列连续两个
+    if leftTop ~= nil and bottom ~= nil and leftTop.colorIndex == itemCom.colorIndex and bottom.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { leftTop, itemCom, bottom }
+    end
+
+    if rightTop ~= nil and bottom ~= nil and rightTop.colorIndex == itemCom.colorIndex and bottom.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { rightTop, itemCom, bottom }
+    end
+
+    if leftBottom ~= nil and top ~= nil and leftBottom.colorIndex == itemCom.colorIndex and top.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { leftBottom, itemCom, top }
+    end
+
+    if rightBottom ~= nil and top ~= nil and rightBottom.colorIndex == itemCom.colorIndex and top.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { rightBottom, itemCom, top }
+    end
+
+    --中间一行连续两个
+    if leftTop ~= nil and right ~= nil and leftTop.colorIndex == itemCom.colorIndex and right.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { leftTop, itemCom, right }
+    end
+
+    if leftBottom ~= nil and right ~= nil and leftBottom.colorIndex == itemCom.colorIndex and right.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { leftBottom, itemCom, right }
+    end
+
+    if rightTop ~= nil and left ~= nil and rightTop.colorIndex == itemCom.colorIndex and left.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { rightTop, itemCom, left }
+    end
+
+    if rightBottom ~= nil and left ~= nil and rightBottom.colorIndex == itemCom.colorIndex and left.colorIndex == itemCom.colorIndex then
+        result[#result + 1] = { rightBottom, itemCom, left }
     end
 
     return result

@@ -26,7 +26,6 @@ public class LuaComponent : MonoBehaviour {
     public static LuaComponent AddLuaComponent(GameObject go,LuaTable luaTable) {
         LuaComponent component = go.AddComponent<LuaComponent>();
         component.ComponentName = luaTable["componentName"] as string;
-        Debug.Log(component.ComponentName+ "LuaComponent->C#");
         component.SetLuaTable(luaTable);
         component.CallAwake();
         return component;

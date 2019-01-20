@@ -41,15 +41,20 @@ function GameItem:onPointerClick(go, eventData)
     EventDispatcher:Dispatcher(EventIds.ItemClicked, self)
 end
 
-function GameItem:MoveTo(toX, toY, callback)
+function GameItem:MoveTo(toX, toY, callback, length)
     local ox = self.x - toX
     local oy = self.y - toY
     local dur = self.moveSpeed * 1
-    if math.abs(ox) > 0 then
-        dur = self.moveSpeed * math.abs(ox)
+    if length ~= nil and length > 0 then
+        dur = self.moveSpeed * math.abs(length)
     else
-        dur = self.moveSpeed * math.abs(oy)
+        if math.abs(ox) > 0 then
+            dur = self.moveSpeed * math.abs(ox)
+        else
+            dur = self.moveSpeed * math.abs(oy)
+        end
     end
+
     ---@type UnityEngine.Transform
     self.transform = self.gameObject.transform
     ---@type
