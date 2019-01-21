@@ -166,6 +166,8 @@ public class Packager {
         AddBuildMap("update" + AppConst.ExtName, "*.prefab", "Assets/Resources/Builds/Panels/Update");
         AddBuildMap("start" + AppConst.ExtName, "*.prefab", "Assets/Resources/Builds/Panels/Start");
         AddBuildMap("game" + AppConst.ExtName, "*.prefab", "Assets/Resources/Builds/Panels/Game");
+        AddBuildMap("gameover" + AppConst.ExtName, "*.prefab", "Assets/Resources/Builds/Panels/GameOver");
+
 
         AddBuildMap("prompt_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/UITextures/Prompt");
         AddBuildMap("shared_asset" + AppConst.ExtName, "*.png", "Assets/Resources/Builds/UITextures/Shared");

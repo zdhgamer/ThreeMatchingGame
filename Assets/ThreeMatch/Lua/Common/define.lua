@@ -1,24 +1,25 @@
-
 CtrlNames = {
-	Prompt = "PromptCtrl",
-	Message = "MessageCtrl",
-	Start = "StartCtrl",
-	Game = "GameCtrl"
+    Prompt = "PromptCtrl",
+    Message = "MessageCtrl",
+    Start = "StartCtrl",
+    Game = "GameCtrl",
+    GameOver = "GameOverCtrl"
 }
 
 PanelNames = {
-	"PromptPanel",	
-	"MessagePanel",
-	"StartPanel",
-	"GamePanel",
+    "PromptPanel",
+    "MessagePanel",
+    "StartPanel",
+    "GamePanel",
+    "GameOverPanel"
 }
 
 --协议类型--
 ProtocalType = {
-	BINARY = 0,
-	PB_LUA = 1,
-	PBC = 2,
-	SPROTO = 3,
+    BINARY = 0,
+    PB_LUA = 1,
+    PBC = 2,
+    SPROTO = 3,
 }
 --当前使用的协议类型--
 TestProtoType = ProtocalType.BINARY;

@@ -6,4 +6,8 @@
 
 EventIds = {
     ItemClicked = '2001';
+    GetScore = '2002';
+    GameOver = '2003';
+    BackStart = '2004';
+    ShowScore = '2005';
 }

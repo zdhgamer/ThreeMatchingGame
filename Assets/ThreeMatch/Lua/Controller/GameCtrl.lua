@@ -5,6 +5,8 @@
 ---
 
 require("Logic/GameLogic")
+require("EventDispatcher")
+require('Common/eventids')
 
 GameCtrl = {};
 local this = GameCtrl;
@@ -15,6 +17,8 @@ local transform;
 ---@type UnityEngine.GameObject
 local gameObject;
 
+local lastScore = 0
+
 --构建函数--
 function GameCtrl.New()
     logWarn("gameCtrl.New--->>");
@@ -22,8 +26,15 @@ function GameCtrl.New()
 end
 
 function GameCtrl.Awake()
+    lastScore = 0
     logWarn("gameCtrl.Awake--->>");
     panelMgr:CreatePanel('Game', this.OnCreate);
+    EventDispatcher:AddEventListener(EventIds.GetScore, function(score)
+        this.GetScore(score)
+    end)
+    EventDispatcher:AddEventListener(EventIds.GameOver, function()
+        this.GameOver()
+    end)
 end
 
 --启动事件--
@@ -34,7 +45,7 @@ function GameCtrl.OnCreate(obj)
     this.lastTime = 60
     this.backBtnListener = EventTriggerListener.GetListener(GamePanel.backBtn.gameObject);
     this.backBtnListener.onPointerClick = this.backBtnListener.onPointerClick + GameCtrl.OnBackBtnClick
-    coroutine.start(this.LastTimaShow);
+    coroutine.start(this.LastTimeShow);
 end
 
 --关闭事件--
@@ -43,21 +54,43 @@ function GameCtrl.Close()
     panelMgr:ClosePanel('Start');
 end
 
-
 ---@param go UnityEngine.GameObject
-function GameCtrl.OnBackBtnClick(go,eventData)
+function GameCtrl.OnBackBtnClick(go, eventData)
     log('点击返回按钮')
+    local ctrl = CtrlManager.GetCtrl(CtrlNames.Start);
+    if ctrl ~= nil then
+        ctrl:Awake();
+    end
+    coroutine.stop(this.LastTimeShow)
+    EventDispatcher:Dispatcher(EventIds.BackStart)
+    EventDispatcher:RemoveEventListeners(EventIds.GetScore)
+    EventDispatcher:RemoveEventListeners(EventIds.GameOver)
+    panelMgr:ClosePanel('Game')
+end
+
+function GameCtrl.GetScore(score)
+    lastScore = lastScore + score
+    GamePanel.scoreText.text = lastScore .. ''
+end
+
+function GameCtrl.GameOver()
+    coroutine.stop(this.LastTimeShow)
+    local ctrl = CtrlManager.GetCtrl(CtrlNames.GameOver);
+    if ctrl ~= nil then
+        ctrl:Awake();
+    end
+    EventDispatcher:Dispatcher(EventIds.ShowScore, lastScore)
 end
 
 --显示倒计时
-function GameCtrl:LastTimaShow()
-    log(GamePanel.lastTimeText.text)
+function GameCtrl:LastTimeShow()
     while true do
         GamePanel.lastTimeText.text = this.lastTime .. 's'
         coroutine.wait(1.0)
         this.lastTime = this.lastTime - 1
-        if this.lastTime <=0 then
-            --todo 弹出游戏结束
+        if this.lastTime <= 0 then
+            GamePanel.lastTimeText.text = this.lastTime .. 's'
+            this.GameOver()
             break
         end
     end

@@ -55,8 +55,11 @@ function GameLogic:Awake()
     EventDispatcher:AddEventListener(EventIds.ItemClicked, function(itemCom)
         self:OnGameItemClick(itemCom)
     end)
-    log(self.componentName)
-    log(self.gameObject.name)
+    EventDispatcher:AddEventListener(EventIds.BackStart, function()
+        EventDispatcher:RemoveEventListeners(EventIds.GameOver)
+        EventDispatcher:RemoveEventListeners(EventIds.ItemClicked)
+        destroy(self.gameObject)
+    end)
     self.ItemBgs = self.gameObject.transform:Find('ItemBgs');
     resMgr:LoadPrefab("gameprefabs", { 'BgItem' }, function(objs)
         self:InitBgItems(objs)
@@ -131,16 +134,19 @@ end
 function GameLogic:DoClear()
     local canDis = self:GetCanClearItems()
     local total = self:GetTotal(canDis)
+    EventDispatcher:Dispatcher(EventIds.GetScore, total)
     self:ClearDisGameItem(canDis)
     self:DownToFit(function()
-        log('+++++++++++++++++++++++++++++++++++++++++++++++++')
         self:InstantiateDownGameItem(total, function()
-            log('cccccccccccccccbbbbbbbbbbb')
             canDis = self:GetCanClearItems()
-            log('------------------------------------' .. tostring(#canDis))
-            log(self.gameObject.name)
             if #canDis > 0 then
                 self:DoClear()
+            else
+                local dead = self:CheckIsDeadMap()
+                if dead then
+                    log('死图死图死图死图死图死图死图死图死图')
+                    EventDispatcher:Dispatcher(EventIds.GameOver)
+                end
             end
         end)
     end)
@@ -177,7 +183,7 @@ function GameLogic:InstantiateDownGameItem(total, callback)
     end
 end
 
---生成新得到item
+--生成新的item
 function GameLogic:NewNewGameItem(tempCount, total, x, callback)
     for y = -4, 4, 1 do
         if self.GameItemArray[x][y] == nil then
@@ -205,8 +211,8 @@ function GameLogic:NewNewGameItem(tempCount, total, x, callback)
                     end
                 end
             end, length)
+            coroutine.wait(0.25)
         end
-        coroutine.wait(0.25)
     end
 end
 

@@ -170,7 +170,3 @@ D:\Program\UnityWorkSpace\ThreeTileMatching\obj\Debug\Assembly-CSharp.csproj.Cor
 D:\Program\UnityWorkSpace\ThreeTileMatching\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Program\UnityWorkSpace\ThreeTileMatching\obj\Debug\Assembly-CSharp.dll
 D:\Program\UnityWorkSpace\ThreeTileMatching\obj\Debug\Assembly-CSharp.pdb
-D:\Program\UnityWorkSpace\ThreeTileMatching\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
-D:\Program\UnityWorkSpace\ThreeTileMatching\Temp\bin\Debug\Unity.TextMeshPro.dll
-D:\Program\UnityWorkSpace\ThreeTileMatching\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
-D:\Program\UnityWorkSpace\ThreeTileMatching\Temp\bin\Debug\UnityEditor.StandardEvents.dll
