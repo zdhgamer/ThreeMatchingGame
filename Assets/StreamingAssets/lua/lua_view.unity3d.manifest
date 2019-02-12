@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1502176261
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 82c45df56f8e33e8d1c64770b473467d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Lua/View/GameOverPanel.lua.bytes
+- Assets/Lua/View/MessagePanel.lua.bytes
+- Assets/Lua/View/GamePanel.lua.bytes
+- Assets/Lua/View/StartPanel.lua.bytes
+- Assets/Lua/View/PromptPanel.lua.bytes
+Dependencies: []

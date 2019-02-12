@@ -246,13 +246,13 @@ namespace LuaFramework {
             string path = string.Empty;
             switch (Application.platform) {
                 case RuntimePlatform.Android:
-                    path = "jar:file://" + Application.dataPath + "!/assets/";
-                break;
+                    path = Application.streamingAssetsPath + "/";
+                    break;
                 case RuntimePlatform.IPhonePlayer:
                     path = Application.dataPath + "/Raw/";
                 break;
                 default:
-                    path = Application.dataPath + "/" + AppConst.AssetDir + "/";
+                    path = Application.streamingAssetsPath+"/";
                 break;
             }
             return path;

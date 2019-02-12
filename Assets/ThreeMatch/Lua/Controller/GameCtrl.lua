@@ -19,6 +19,8 @@ local gameObject;
 
 local lastScore = 0
 
+local lastCoroutine = nil
+
 --构建函数--
 function GameCtrl.New()
     logWarn("gameCtrl.New--->>");
@@ -45,7 +47,7 @@ function GameCtrl.OnCreate(obj)
     this.lastTime = 60
     this.backBtnListener = EventTriggerListener.GetListener(GamePanel.backBtn.gameObject);
     this.backBtnListener.onPointerClick = this.backBtnListener.onPointerClick + GameCtrl.OnBackBtnClick
-    coroutine.start(this.LastTimeShow);
+    this.lastCoroutine  = coroutine.start(this.LastTimeShow);
 end
 
 --关闭事件--
@@ -61,7 +63,7 @@ function GameCtrl.OnBackBtnClick(go, eventData)
     if ctrl ~= nil then
         ctrl:Awake();
     end
-    coroutine.stop(this.LastTimeShow)
+    coroutine.stop(this.lastCoroutine)
     EventDispatcher:Dispatcher(EventIds.BackStart)
     EventDispatcher:RemoveEventListeners(EventIds.GetScore)
     EventDispatcher:RemoveEventListeners(EventIds.GameOver)
@@ -74,7 +76,7 @@ function GameCtrl.GetScore(score)
 end
 
 function GameCtrl.GameOver()
-    coroutine.stop(this.LastTimeShow)
+    coroutine.stop(this.lastCoroutine)
     local ctrl = CtrlManager.GetCtrl(CtrlNames.GameOver);
     if ctrl ~= nil then
         ctrl:Awake();
